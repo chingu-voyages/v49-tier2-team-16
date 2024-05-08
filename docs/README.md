@@ -1,6 +1,6 @@
 # voyage-tasks
 
-[Project Requirements and Specifications](./reqs-and-specs)
+[Project Requirements and Specifications](./reqs-and-specs.md)
 
 Your project's `readme` is as important to success as your code. For 
 this reason you should put as much care into its creation and maintenance
