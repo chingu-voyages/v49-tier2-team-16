@@ -32,7 +32,7 @@ function App() {
         </p>
       </div>
       <p className="read-the-docs">
-        Check out our <a href="https://chingu-voyages.github.io/v49-tier2-team-16/reqs-and-specs" target="_blank" >project requirements and specifications our official documentation</a>. 
+        Check out our <a href="https://chingu-voyages.github.io/v49-tier2-team-16/reqs-and-specs" target="_blank" >project requirements and specifications</a> or our <a href="https://chingu-voyages.github.io/v49-tier2-team-16/" target="_blank"> official documentation</a>. 
         Click on the Vite, React, and Chingu logos to learn more
       </p>
       
