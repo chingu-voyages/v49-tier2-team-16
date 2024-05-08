@@ -38,5 +38,6 @@ Meeting Agenda templates (located in the `/docs` directory in this repo):
 | Mikey Nichols | Developer | [mnichols08](https://github.com/mnichols08) | [in/mnix-dev](https://linkedin.com/in/mnix-dev)
 | Valeriy Lysenko | Developer / Scrum Master | [Valeriusdev](https://github.com/Valeriusdev) | [in/valeriylysenko](https://www.linkedin.com/in/valeriylysenko/)
 | Kseniia Riabova | Developer | [KseniiaRiabova](https://github.com/KseniiaRiabova) | [in/kseniia--riabova](linkedin.com/in/kseniia--riabova)
+| Kaz Smino | Developer | [Kaz-Smino](https://github.com/Kaz-Smino) | [in/kaz-smino](linkedin.com/in/kaz-smino)
 
 See also the list of [contributors](./CONTRIBUTORS.md) who participated in this project.
