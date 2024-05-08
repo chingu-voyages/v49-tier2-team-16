@@ -1,5 +1,7 @@
 # voyage-tasks
 
+[Project Requirements and Specifications](./reqs-and-specs.md)
+
 Your project's `readme` is as important to success as your code. For 
 this reason you should put as much care into its creation and maintenance
 as you would any other component of the application.
@@ -28,14 +30,12 @@ Meeting Agenda templates (located in the `/docs` directory in this repo):
 - Meeting - Sprint Open Topic Session --> ./docs/meeting-sprint_open_topic_session.docx
 
 ## Our Team
+<!-- Please add your name to the table below in alphabetical order -->
+| Name | Role | GitHub Profile | LinkedIn | 
+| --- | --- | --- | --- |
+| Chingu Voyages | Initial work | [chingu-voyages](https://github.com/chingu-voyages) | [company/chingu-os](https://www.linkedin.com/company/chingu-os/) |
+| Jim Medlock | Initial work | [jmedlock](https://github.com/jdmedlock) | [in/jmedlock](https://www.linkedin.com/in/jdmedlock/)
+| Mikey Nichols | Developer | [mnichols08](https://github.com/mnichols08) | [in/mnix-dev](https://linkedin.com/in/mnix-dev)
 
-Everyone on your team should add their name along with a link to their GitHub
-& optionally their LinkedIn profiles below. Do this in Sprint #1 to validate
-your repo access and to practice PR'ing with your team *before* you start
-coding!
 
-- Teammate name #1: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
-- Teammate name #2: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
-
-   ...
-- Teammate name #n: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
+See also the list of [contributors](./CONTRIBUTORS.md) who participated in this project.
