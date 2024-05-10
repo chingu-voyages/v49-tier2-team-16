@@ -40,4 +40,5 @@ Meeting Agenda templates (located in the `/docs` directory in this repo):
 | Kseniia Riabova | Developer | [KseniiaRiabova](https://github.com/KseniiaRiabova) | [in/kseniia--riabova](linkedin.com/in/kseniia--riabova)
 | Kaz Smino | Developer | [Kaz-Smino](https://github.com/Kaz-Smino) | [in/kaz-smino](linkedin.com/in/kaz-smino)
 | Andy Brockmann | Developer | [AndyBrockmann](https://github.com/PongRVA) | [in/andybrockmann](https://www.linkedin.com/in/andybrockmann)
+| Harmeet Kaur | Product Owner |  | [in/harmeet-kaur-psm-i-pspo-i-safe-popm-008778236](https://www.linkedin.com/in/harmeet-kaur-psm-i-pspo-i-safe-popm-008778236/)
 See also the list of [contributors](./CONTRIBUTORS.md) who participated in this project.
