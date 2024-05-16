@@ -43,4 +43,6 @@ Meeting Agenda templates (located in the `/docs` directory in this repo):
 | Laura Gieg | Developer | [Laura Gieg/Frosty](https://github.com/frosty8104) | [in/lauragieg](https://www.linkedin.com/in/laura-gieg-web-designer-developer/)
 | Harmeet Kaur | Product Owner |  | [in/harmeet-kaur-psm-i-pspo-i-safe-popm-008778236](https://www.linkedin.com/in/harmeet-kaur-psm-i-pspo-i-safe-popm-008778236/)
 | Nadiia Lashtun | UI/UX Designer | [NadiiaLashtun](https://github.com/NadiiaLashtun) | [in/lashtun](https://www.linkedin.com/in/lashtun/)
+| Rigo Lim | Developer | [r1g023](https://github.com/r1g023) | [in/rigo0101] (https://www.linkedin.com/in/rigo0101/)
 See also the list of [contributors](./CONTRIBUTORS.md) who participated in this project.
+
