@@ -1,13 +1,14 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg';
-import chinguLogo from './assets/chingo-house-logo.png';
-import tailWindLogo from './assets/tailwindcss.png';
-import viteLogo from '/vite.svg';
-import './App.css';
-import './index.css';
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import chinguLogo from "./assets/chingo-house-logo.png";
+import tailWindLogo from "./assets/tailwindcss.png";
+import underConstruction from "./assets/colorconstruction.gif";
+import viteLogo from "/vite.svg";
+import "./App.css";
+import "./index.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <>
@@ -26,7 +27,13 @@ function App() {
         </a>
       </div>
       <h1 className="text-4xl font-bold">Welcome to Color Compass!</h1>
-      <p>This is our initial deployment. If you are successfully seeing this message in your browser, then you are ready to develop!</p>
+      <p>
+        This is our initial deployment. We are currently under development.{" "}
+      </p>
+      <p>Please come back often for updates.</p>
+      <div className="flex justify-center items-center pt-12">
+        <img src={underConstruction} alt="Under Construction" />
+      </div>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
@@ -36,13 +43,26 @@ function App() {
         </p>
       </div>
       <p className="read-the-docs">
-        Check out our <a href="https://chingu-voyages.github.io/v49-tier2-team-16/reqs-and-specs" target="_blank" >project requirements and specifications</a> or our <a href="https://chingu-voyages.github.io/v49-tier2-team-16/" target="_blank"> official documentation</a>. 
-        Click on the Vite, React, and Chingu logos to learn more
+        Check out our{" "}
+        <a
+          href="https://chingu-voyages.github.io/v49-tier2-team-16/reqs-and-specs"
+          target="_blank"
+        >
+          project requirements and specifications here
+        </a>
       </p>
-      <p className="text-3xl font-bold underline">Tailwind.css has been initialized. </p>
-      
+      <p>&lt; / &gt; with &lt;3 by</p>
+      <p>
+        <a
+          className="text-3xl font-bold underline"
+          href="https://github.com/chingu-voyages/v49-tier2-team-16"
+          target="_blank"
+        >
+          Chingu Voyage 49 Team 16
+        </a>
+      </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
