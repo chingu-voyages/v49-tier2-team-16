@@ -25,9 +25,8 @@ function App() {
           <img src={chinguLogo} className="logo" alt="Chingu logo" />
         </a>
       </div>
-      <h1>Hello Team 16 Voyagers!</h1>
+      <h1 className="text-4xl font-bold">Welcome to Color Compass!</h1>
       <p>This is our initial deployment. If you are successfully seeing this message in your browser, then you are ready to develop!</p>
-      <p>Welcome to Color Compass!</p>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
