@@ -1,0 +1,27 @@
+[
+    {
+      "name": "Mikey Nichols",
+      "location": "West Virginia",
+      "email": "mnix@journeytocode.io",
+      "about": "I am an aspiring developer with a strong desire to kick down the door into the tech industry! It has been a great experience thus far working with Team 16 on this project.",
+      "github": "https://github.com/mnichols08",
+      "linkedin": "https://linkedin.com/in/mnix-dev",
+      "twitter": "https://x.com/_m_Nix_"
+    },
+    {
+      "name": "Andrew Brockmann",
+      "location": "Brooklyn, NY",
+      "email": "andybrockmann@gmail.com",
+      "about": "Educator and developer seeking career switch into tech industry.",
+      "github": "https://github.com/PongRVA",
+      "linkedin": "https://linkedin.com/in/andybrockmann"
+    },
+    {
+      "name": "Laura Gieg/Frosty",
+      "location": "Leduc, Alberta, Canada",
+      "email": "lg8104@gmail.com",
+      "about": "I am a web design and development student, looking for entry level positions in either or both roles",
+      "github": "https://github.com/frosty8104",
+      "linkedin": "https://www.linkedin.com/in/laura-gieg-web-designer-developer/"
+    }
+  ]
