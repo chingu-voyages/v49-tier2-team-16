@@ -1,10 +1,11 @@
 import { useState } from "react";
 import underConstruction from "./assets/colorconstruction.gif"
-import "./index.css";
+import reactLogo from './assets/react.svg';
 import './App.css'
 import Header from './Header'
 import Footer from './Footer'
 import ImageGenerator from './components/ImageGenerator';
+
 function App() {
   // This generates a random HSL color
   const randomColor = () =>
@@ -47,8 +48,23 @@ function App() {
           </button>
         </div>
         <ImageGenerator />
-        <Footer />
+        <p>
+          Edit <code>src/App.jsx</code> and save to test updates live.
+        </p>
       </div>
+      <p className="read-the-docs">
+        Check out our{" "}
+        <a
+          href="https://chingu-voyages.github.io/v49-tier2-team-16/reqs-and-specs"
+          target="_blank"
+        >
+          project requirements and specifications here
+        </a>
+      </p>
+      <p>&lt; / &gt; with &lt;3 by</p>
+      <p>
+ <Footer />
+      </p>
     </>
   );
 }
