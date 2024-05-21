@@ -1,6 +1,6 @@
 import { useState } from "react";
 import underConstruction from "./assets/colorconstruction.gif"
-import "./index.css";
+// import "./index.css";
 import './App.css'
 import Header from './Header'
 import Footer from './Footer'
