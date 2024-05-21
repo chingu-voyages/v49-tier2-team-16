@@ -3,6 +3,8 @@ import reactLogo from './assets/react.svg';
 import chinguLogo from './assets/chingo-house-logo.png';
 import viteLogo from '/vite.svg'
 import './App.css'
+import Header from './Header'
+import Footer from './Footer'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -10,6 +12,7 @@ function App() {
   return (
     <>
       <div>
+        <Header />
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
@@ -19,6 +22,7 @@ function App() {
         <a href="https://chingu.io" target="_blank">
           <img src={chinguLogo} className="logo" alt="Chingu logo" />
         </a>
+        <Footer />
       </div>
       <h1>Hello Chingus</h1>
       <p>This is our initial deployment. If you are successfully seeing this message in your browser, then you are ready to develop!</p>
@@ -38,6 +42,6 @@ function App() {
       
     </>
   )
-}
+}   ``
 
 export default App
