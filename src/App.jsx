@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg';
 import chinguLogo from './assets/chingo-house-logo.png';
 import viteLogo from '/vite.svg'
 import './App.css'
+import ImageGenerator from './components/ImageGenerator';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -27,6 +28,7 @@ function App() {
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
+        <ImageGenerator />
         <p>
           Edit <code>src/App.jsx</code> and save to test updates live.
         </p>
