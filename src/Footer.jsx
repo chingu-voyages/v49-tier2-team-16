@@ -3,6 +3,7 @@ import data from './data/team.json'
 
 function Footer() {
 
+    
     return (
         <>
         <div>
