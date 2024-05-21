@@ -1,11 +1,12 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import chinguLogo from "./assets/chingo-house-logo.png";
 import tailWindLogo from "./assets/tailwindcss.png";
-import underConstruction from "./assets/colorconstruction.gif";
-import viteLogo from "/vite.svg";
-import "./App.css";
+import underConstruction from "./assets/colorconstruction.gif"
 import "./index.css";
+import reactLogo from './assets/react.svg';
+import chinguLogo from './assets/chingo-house-logo.png';
+import viteLogo from '/vite.svg'
+import './App.css'
+import ImageGenerator from './components/ImageGenerator';
 
 function App() {
   // This generates a random HSL color
@@ -64,6 +65,7 @@ function App() {
         >
           color is {color}
         </button>
+        <ImageGenerator />
         <p>
           Edit <code>src/App.jsx</code> and save to test updates live.
         </p>
