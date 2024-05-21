@@ -50,19 +50,7 @@ function App() {
       </div>
       <ImageGenerator />
 
-      <p className="read-the-docs">
-        Check out our{" "}
-        <a
-          href="https://chingu-voyages.github.io/v49-tier2-team-16/reqs-and-specs"
-          target="_blank"
-        >
-          project requirements and specifications here
-        </a>
-      </p>
-      <p>&lt; / &gt; with &lt;3 by</p>
-      <p>
         <Footer />
-      </p>
     </>
   );
 }
