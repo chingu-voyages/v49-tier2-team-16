@@ -25,13 +25,11 @@ function App() {
 
   return (
     <>
-      <div>
         <Header />
          <div className="flex justify-center items-center pt-12">
         <img src={underConstruction} alt="Under Construction" />
-      </div>
         {/* This is just some code to trigger a color change instead of count as comes with the default template */}
-      <div className="card">
+        <div className="card">
         <button
           id="color-button"
           onClick={() => {
@@ -46,7 +44,8 @@ function App() {
           
         >
           color is {color}
-        </button>
+          </button>
+        </div>
         <ImageGenerator />
         <Footer />
       </div>
