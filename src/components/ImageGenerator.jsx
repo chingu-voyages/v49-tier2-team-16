@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 const ImageGenerator = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [imgUrl, setImgUrl] = useState("");
+  const [error, setError] = useState("");
 
   useEffect(() => {
     if (imgUrl) {
@@ -23,17 +24,23 @@ const ImageGenerator = () => {
           setIsLoading(true);
           const prompt = document.getElementById("prompt").value;
           const colors = document.getElementById("colors").value;
-          const url = await fetch(
-            `https://openai-api-u24k.onrender.com/v49/img/${prompt}/${colors}`
-          ).then((res) => res.json());
-          setImgUrl(url);
-          setIsLoading(false);
+          try {
+            const url = await fetch(
+              `https://openai-api-u24k.onrender.com/v49/img/${prompt}/${colors}`
+            ).then((res) => res.json());
+            setImgUrl(url);
+          } catch (err) {
+            setError(err.message);
+          } finally {
+            setIsLoading(false);
+          }
         }}
         disabled={isLoading}
       >
         Generate Image
       </button>
       {isLoading && <p>Loading...</p>}
+      {error && <p style={{ color: "red" }}>{error}</p>}
     </form>
   );
 };
