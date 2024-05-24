@@ -44,7 +44,7 @@ function UserData() {
                 role: 'user',
                 content: `User input: ${userInput}. Provide color recommendations based on ${hexColor}. Provide description and color codes.`,
               },
-            ], // Change this line
+            ],
             model: 'llama3-8b-8192',
           }),
         }
