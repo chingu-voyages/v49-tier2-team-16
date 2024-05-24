@@ -7,11 +7,11 @@ import InputForm from './InputForm';
 import { ColorPicker } from 'react-iro';
 import { HexColorPicker } from 'react-colorful';
 // import { SketchPicker } from "react-color";
-('use strict');
+
 import Groq from 'groq-sdk';
 
 const groq = new Groq({
-  apiKey: import.meta.env.VITE_GROQ_API_KEY,
+  apiKey: `${import.meta.env.VITE_GROQ_API_KEY}`,
   dangerouslyAllowBrowser: true,
 });
 
