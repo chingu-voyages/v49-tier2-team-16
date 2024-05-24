@@ -1,14 +1,14 @@
-import { useState, useMemo, useEffect } from "react";
-import "./App.css";
-import OpenAI from "openai";
-import iro from "@jaames/iro";
+import { useState, useMemo, useEffect } from 'react';
+import './App.css';
+
+import iro from '@jaames/iro';
 // import PickColor from "./PickColor";
-import InputForm from "./InputForm";
-import { ColorPicker } from "react-iro";
-import { HexColorPicker } from "react-colorful";
+import InputForm from './InputForm';
+import { ColorPicker } from 'react-iro';
+import { HexColorPicker } from 'react-colorful';
 // import { SketchPicker } from "react-color";
-("use strict");
-import Groq from "groq-sdk";
+('use strict');
+import Groq from 'groq-sdk';
 
 const groq = new Groq({
   apiKey: import.meta.env.VITE_GROQ_API_KEY,
@@ -24,10 +24,10 @@ const groq = new Groq({
 const options = { width: 300 };
 
 function App() {
-  const [hexColor, setHexColor] = useState("#f00");
+  const [hexColor, setHexColor] = useState('#f00');
   const [formData, setFormData] = useState({
-    usage: "Coordinate colors for my outfit!",
-    colorScheme: "complimentary",
+    usage: 'Coordinate colors for my outfit!',
+    colorScheme: 'complimentary',
   });
 
   const handleClick = async () => {
@@ -35,13 +35,13 @@ function App() {
       const chatCompletion = await groq.chat.completions.create({
         messages: [
           {
-            role: "user",
+            role: 'user',
             content: `Given the hex code color ${hexColor}, ${formData.usage} giving me four colors in a ${formData.colorScheme} color scheme.  Your response should be in JSON format.`,
           },
         ],
-        model: "llama3-8b-8192",
+        model: 'llama3-8b-8192',
       });
-      console.log(chatCompletion.choices[0]?.message?.content || "");
+      console.log(chatCompletion.choices[0]?.message?.content || '');
       // const completion = await openai.chat.completions.create({
       //   messages: [
       //     {
@@ -59,7 +59,7 @@ function App() {
   const setters = useMemo(
     () => ({
       onChangeColor(color) {
-        console.log("color: ", color.hexString);
+        console.log('color: ', color.hexString);
         setHexColor(color.hexString);
       },
     }),
@@ -75,7 +75,7 @@ function App() {
   };
   return (
     <>
-      <div style={{ alignItems: "center" }}>
+      <div style={{ alignItems: 'center' }}>
         {/* <PickColor options={options} setters={setters} /> */}
         {/* <h2>React-Iro (I see double!)</h2>
         <ColorPicker options={options} setters={setters}></ColorPicker>
