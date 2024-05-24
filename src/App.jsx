@@ -1,56 +1,96 @@
-import { useState } from "react";
-import underConstruction from "./assets/colorconstruction.gif";
+import { useState, useMemo, useEffect } from "react";
 import "./App.css";
-import Header from "./Header";
-import Footer from "./Footer";
-import ImageGenerator from "./components/ImageGenerator";
+import OpenAI from "openai";
+import iro from "@jaames/iro";
+// import PickColor from "./PickColor";
+import InputForm from "./InputForm";
+import { ColorPicker } from "react-iro";
+import { HexColorPicker } from "react-colorful";
+// import { SketchPicker } from "react-color";
+("use strict");
+import Groq from "groq-sdk";
+
+const groq = new Groq({
+  apiKey: import.meta.env.VITE_GROQ_API_KEY,
+  dangerouslyAllowBrowser: true,
+});
+
+// const API_KEY = import.meta.env.VITE_GROQ_API_KEY;
+// const openai = new OpenAI({
+//   apiKey: API_KEY,
+//   dangerouslyAllowBrowser: true,
+// });
+
+const options = { width: 300 };
 
 function App() {
-  // This generates a random HSL color
-  const randomColor = () =>
-    `hsl(${Math.floor(Math.random() * 360)}, ${Math.floor(
-      Math.random() * 45 + 55
-    )}%, ${Math.floor(Math.random() * 60 + 40)}%)`;
-  // Extracts the HSL values from a color string
-  const extractHSL = (color) => {
-    const match = color.match(/hsl\((\d+),\s*(\d+)%,\s*(\d+)%\)/);
-    return match ? { h: match[1], s: match[2], l: match[3] } : null;
-  };
-  // Determines if a color is light or dark
-  const isLight = (color) => {
-    const { h, s, l } = extractHSL(color);
-    return l > 50;
-  };
-  const [color, setColor] = useState(randomColor());
+  const [hexColor, setHexColor] = useState("#f00");
+  const [formData, setFormData] = useState({
+    usage: "Coordinate colors for my outfit!",
+    colorScheme: "complimentary",
+  });
 
+  const handleClick = async () => {
+    try {
+      const chatCompletion = await groq.chat.completions.create({
+        messages: [
+          {
+            role: "user",
+            content: `Given the hex code color ${hexColor}, ${formData.usage} giving me four colors in a ${formData.colorScheme} color scheme.  Your response should be in JSON format.`,
+          },
+        ],
+        model: "llama3-8b-8192",
+      });
+      console.log(chatCompletion.choices[0]?.message?.content || "");
+      // const completion = await openai.chat.completions.create({
+      //   messages: [
+      //     {
+      //       role: "system",
+      //       content: `Take the color in hex code ${hexColor} and return a ${formData.colorScheme} color scheme in JSON format that represents the input well. Provide some information about why each color was picked as well`,
+      //     },
+      //   ],
+      //   model: "gpt-4o",
+      // });
+      // console.log(completion.choices[0].message.content);
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+  const setters = useMemo(
+    () => ({
+      onChangeColor(color) {
+        console.log("color: ", color.hexString);
+        setHexColor(color.hexString);
+      },
+    }),
+    []
+  );
+  const handleChange = (e) => {
+    e.preventDefault?.();
+    const changedField = e.target.name;
+    const newValue = e.target.value;
+    setFormData((currForm) => {
+      return { ...currForm, [changedField]: newValue };
+    });
+  };
   return (
     <>
-      <Header />
-      
-      <div className="flex justify-center items-center pt-12">
-        <img src={underConstruction} alt="Under Construction" />
+      <div style={{ alignItems: "center" }}>
+        {/* <PickColor options={options} setters={setters} /> */}
+        {/* <h2>React-Iro (I see double!)</h2>
+        <ColorPicker options={options} setters={setters}></ColorPicker>
+        <br /> */}
+        <h2>React-Colorful</h2>
+        <HexColorPicker color={hexColor} onChange={setHexColor} />;
+        <br />
+        {/* <h2>Sketch-Picker</h2> */}
+        {/* <SketchPicker /> */}
+        <InputForm handleChange={handleChange} formData={formData} />
+        <div className=".card" style={{ background: hexColor }}>
+          You chose hex color {hexColor}
+        </div>
+        <button onClick={handleClick}>send recommendation</button>
       </div>
-      <p>This application is still under construction.</p>
-      {/* This is just some code to trigger a color change instead of count as comes with the default template */}
-      <div className="card">
-        <button
-          id="color-button"
-          onClick={() => {
-            const nextColor = randomColor();
-            setColor(nextColor);
-            const btnStyle = document.getElementById("color-button").style;
-            btnStyle.transition = "all 0.25s";
-            // Set the text color to black or white depending on the lightness of the background color
-            btnStyle.color = isLight(nextColor) ? "black" : "white";
-            btnStyle.backgroundColor = nextColor;
-          }}
-        >
-          color is {color}
-        </button>
-      </div>
-      <ImageGenerator />
-
-        <Footer />
     </>
   );
 }
