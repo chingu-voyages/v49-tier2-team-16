@@ -3,10 +3,11 @@ import Groq from "groq-sdk";
 import { useState, useMemo, useEffect } from "react";
 import extractJSON from "./utils/extractJson";
 import ColorPicker from "./components/ColorPicker";
+import ColorPicker2 from "./components/ColorPicker2";
 import InputForm from "./components/InputForm";
 import Header from "./components/Header";
 import MainSection from "./components/MainSection";
-import DisplayColours from "./components/DisplayColours"
+import DisplayColours from "./components/DisplayColours";
 
 import Footer from "./Footer";
 
@@ -24,7 +25,7 @@ function App() {
     colorScheme: "complimentary",
   });
 
-  const [colorArr, setColorArr] = useState([])
+  const [colorArr, setColorArr] = useState([]);
 
   const handleClick = async () => {
     try {
@@ -64,7 +65,7 @@ function App() {
       return { ...currForm, [changedField]: newValue };
     });
   };
-  
+
   return (
     <>
       <div style={{ alignItems: "center" }}>
@@ -77,7 +78,7 @@ function App() {
           hexColor={hexColor}
         />
         <br />
-        <button className='shadow-lg' onClick={handleClick}>
+        <button className="shadow-lg" onClick={handleClick}>
           Get recommendation
         </button>
         {colorArr.length > 0 && <DisplayColours colors={colorArr} />}
