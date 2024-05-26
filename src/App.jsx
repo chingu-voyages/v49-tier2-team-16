@@ -1,10 +1,7 @@
 import { useState, useMemo, useEffect } from "react";
 import "./App.css";
-import OpenAI from "openai";
-import iro from "@jaames/iro";
-// import PickColor from "./PickColor";
+import ColorPicker from "./ColorPicker";
 import InputForm from "./InputForm";
-import { ColorPicker } from "react-iro";
 import { HexColorPicker } from "react-colorful";
 // import { SketchPicker } from "react-color";
 ("use strict");
@@ -76,19 +73,13 @@ function App() {
   return (
     <>
       <div style={{ alignItems: "center" }}>
-        {/* <PickColor options={options} setters={setters} /> */}
-        {/* <h2>React-Iro (I see double!)</h2>
-        <ColorPicker options={options} setters={setters}></ColorPicker>
-        <br /> */}
-        <h2>React-Colorful</h2>
-        <HexColorPicker color={hexColor} onChange={setHexColor} />;
-        <br />
-        {/* <h2>Sketch-Picker</h2> */}
-        {/* <SketchPicker /> */}
+        <h1>Color Compass</h1>
+        <ColorPicker options={options} setters={setters} />
         <InputForm handleChange={handleChange} formData={formData} />
         <div className=".card" style={{ background: hexColor }}>
           You chose hex color {hexColor}
         </div>
+        <br />
         <button onClick={handleClick}>send recommendation</button>
       </div>
     </>
