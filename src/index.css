@@ -41,4 +41,14 @@ a:hover {
   @apply text-rose;
 }
 
+button {
+  border-radius: 25%;
+  padding: 1rem;
+  @apply rounded-full py-2 px-4 text-rose border border-rose;
+  transition: all 0.25s linear; 
+}
 
+button:hover {
+  @apply bg-rose text-white;
+  transform: scale(1.1) translateY(-rem);
+}
