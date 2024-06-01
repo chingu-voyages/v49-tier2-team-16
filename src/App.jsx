@@ -34,9 +34,9 @@ function App() {
         ],
         model: "llama3-8b-8192",
       });
-      console.log(chatCompletion.choices[0]?.message?.content || "");
+            console.log(chatCompletion.choices[0]?.message?.content || "");
     } catch (error) {
-      console.log(error.message);
+      console.error(error.message);
     }
   };
   const setters = useMemo(
