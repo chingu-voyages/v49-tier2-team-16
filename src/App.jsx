@@ -5,7 +5,7 @@ import "./App.css";
 import extractJSON from "./utils/extractJson";
 import ColorPicker from "./components/ColorPicker";
 import InputForm from "./components/InputForm";
-import Header from "./Header";
+import Header from "./components/Header";
 import Footer from "./Footer";
 
 const groq = new Groq({
