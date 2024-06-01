@@ -4,6 +4,7 @@ import ColorPicker from "./components/ColorPicker";
 import InputForm from "./components/InputForm";
 import Header from "./Header";
 import Footer from "./Footer";
+import ImageGenerator from "./components/ImageGenerator";
 ("use strict");
 import Groq from "groq-sdk";
 
@@ -67,6 +68,7 @@ function App() {
         <button className="shadow-lg" onClick={handleClick}>
           Get recommendation
         </button>
+        <ImageGenerator />
         <Footer />
       </div>
     </>
