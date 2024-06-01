@@ -2,6 +2,7 @@
 import Groq from "groq-sdk";
 import { useState, useMemo, useEffect } from "react";
 import "./App.css";
+import extractJSON from "./utils/extractJson";
 import ColorPicker from "./components/ColorPicker";
 import InputForm from "./components/InputForm";
 import Header from "./Header";
