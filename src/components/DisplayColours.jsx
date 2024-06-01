@@ -5,9 +5,9 @@ function DisplayColours({ colors }) {
     <>
     {colors.map(color => (
         <div key={color.hex}>
-            <div className={`bg-${color.hex.slice(1)}-300 border-${color.hex.slice(1)}-600 rounded-full p-4 inline-block`}
+            <div className={`bg-${color.hex.slice(1)}-300 rounded-full p-6 inline-block`}
             style={{ backgroundColor: color.hex }}></div>
-        <div className={`bg-${color.hex.slice(1)}-300 border-${color.hex.slice(1)}-600 rounded-full inline-block ml-4 p-4`}>
+        <div className={`bg-${color.hex.slice(1)}-300 rounded-full inline-block ml-4 p-4`}>
         <p>Hex: {color.hex}z</p>
         <p>Name: {color.name}</p>
     <div>
