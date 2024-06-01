@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import generateImgURL from "../utils/generateImgURL";
 
-const ImageGenerator = () => {
+const ImageGenerator = ({prompt}) => {
   const [isLoading, setIsLoading] = useState(false);
   const [imgUrl, setImgUrl] = useState("");
   const [error, setError] = useState("");
@@ -18,15 +18,13 @@ const ImageGenerator = () => {
 
   return (
     <form id="image-container">
-      <input required type="text" id="prompt" placeholder="Prompt" />
       <input required type="text" id="colors" placeholder="Colors" />
       <button
         onClick={async () => {
           setIsLoading(true);
-          const prompt = document.getElementById("prompt").value;
           const colors = document.getElementById("colors").value;
           try {
-            const url = generateImgURL(prompt, colors);
+            const url = await generateImgURL(prompt, colors);
             setImgUrl(url);
           } catch (err) {
             setError(err.message);
