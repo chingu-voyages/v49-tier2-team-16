@@ -1,11 +1,12 @@
+("use strict");
+import Groq from "groq-sdk";
 import { useState, useMemo, useEffect } from "react";
 import "./App.css";
 import ColorPicker from "./components/ColorPicker";
 import InputForm from "./components/InputForm";
 import Header from "./Header";
 import Footer from "./Footer";
-("use strict");
-import Groq from "groq-sdk";
+
 
 const groq = new Groq({
   apiKey: import.meta.env.VITE_GROQ_API_KEY,
