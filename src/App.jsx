@@ -65,6 +65,7 @@ function App() {
       <div style={{ alignItems: "center" }}>
         <Header />
         <main>
+        <h1 className="text-blue">Color Compass</h1>
         <ColorPicker options={options} setters={setters} />
         <InputForm
           handleChange={handleChange}
