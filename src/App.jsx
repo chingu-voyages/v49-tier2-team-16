@@ -68,7 +68,7 @@ function App() {
         <button className="shadow-lg" onClick={handleClick}>
           Get recommendation
         </button>
-        <ImageGenerator />
+        <ImageGenerator prompt={formData.usage}/>
         <Footer />
       </div>
     </>
