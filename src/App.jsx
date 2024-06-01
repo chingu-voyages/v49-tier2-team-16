@@ -33,8 +33,13 @@ function App() {
         ],
         model: "llama3-8b-8192",
       });
-      const chatResponse = chatCompletion.choices[0]?.message?.content || "";
-      console.log(chatResponse);
+      const chatResponse = chatCompletion.choices[0]?.message?.content || ""; // This is the response from the chat model
+      const schemeObj = extractJSON(chatResponse); // This extracts the JSON object from the response
+      console.log(schemeObj); 
+      // From here I imagine we can pass the schemeObj to a component that will display the colors
+      // This click aslo has access to the formData and hexColor so it doesn't make sense to pass into the extractJSON function
+      // Just pass it in here. Remember, we may want to generate an image at this point too. We could write a function for this as well.
+      // That function will need the data that is avaible within this click event.
     } catch (error) {
       console.error(error.message);
     }
