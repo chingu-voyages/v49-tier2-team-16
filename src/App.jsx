@@ -28,14 +28,14 @@ function App() {
         messages: [
           {
             role: "user",
-            content: `Given the hex code color ${hexColor}, ${formData.usage} giving me four colors in a ${formData.colorScheme} color scheme.  Your response should be in JSON format.`,
+            content: `Provide a JSON Object that contains a color scheme of four colors generated from the hex code color ${hexColor}. The color scheme should help with ${formData.colorScheme}. Provide details about why each color was picked. Ensure each color has a name and hex code and description with at least 10 characters. The color scheme must be used to ${formData.usage}. The JSON object is an array of objects that contain the following properties: name, hex, description.`,
           },
         ],
         model: "llama3-8b-8192",
       });
       const chatResponse = chatCompletion.choices[0]?.message?.content || ""; // This is the response from the chat model
       const schemeObj = extractJSON(chatResponse); // This extracts the JSON object from the response
-      console.log(schemeObj); 
+      console.log(schemeObj);
       // From here I imagine we can pass the schemeObj to a component that will display the colors
       // This click aslo has access to the formData and hexColor so it doesn't make sense to pass into the extractJSON function
       // Just pass it in here. Remember, we may want to generate an image at this point too. We could write a function for this as well.
