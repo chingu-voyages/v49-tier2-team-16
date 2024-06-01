@@ -8,7 +8,6 @@ import InputForm from "./components/InputForm";
 import Header from "./Header";
 import Footer from "./Footer";
 
-
 const groq = new Groq({
   apiKey: import.meta.env.VITE_GROQ_API_KEY,
   dangerouslyAllowBrowser: true, //I'm not sure if this is bad practice
@@ -34,7 +33,8 @@ function App() {
         ],
         model: "llama3-8b-8192",
       });
-            console.log(chatCompletion.choices[0]?.message?.content || "");
+      const chatResponse = chatCompletion.choices[0]?.message?.content || "";
+      console.log(chatResponse);
     } catch (error) {
       console.error(error.message);
     }
