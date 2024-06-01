@@ -64,6 +64,7 @@ function App() {
     <>
       <div style={{ alignItems: "center" }}>
         <Header />
+        <main>
         <ColorPicker options={options} setters={setters} />
         <InputForm
           handleChange={handleChange}
@@ -74,6 +75,7 @@ function App() {
         <button className="shadow-lg" onClick={handleClick}>
           Get recommendation
         </button>
+        </main>
         <Footer />
       </div>
     </>
