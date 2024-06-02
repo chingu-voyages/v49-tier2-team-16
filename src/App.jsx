@@ -5,6 +5,7 @@ import "./App.css";
 import extractJSON from "./utils/extractJson";
 import ColorPicker from "./components/ColorPicker";
 import InputForm from "./components/InputForm";
+import DisplayColours from "./components/DisplayColours"
 import Header from "./Header";
 import Footer from "./Footer";
 
