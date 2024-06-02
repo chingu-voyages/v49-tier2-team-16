@@ -23,9 +23,7 @@ function App() {
     colorScheme: "complimentary",
   });
 
-  const [colorsArr, setColorsArr] = useState([])
-  setColorsArr(colorSchema)
-  colorsArr.length > 0 && <DisplayColours colors={colorsArr} />
+  const [colorArr, setColorsArr] = useState([])
 
   const handleClick = async () => {
     try {
@@ -105,9 +103,9 @@ function App() {
         <button className="shadow-lg" onClick={handleClick}>
           Get recommendation
         </button>
+        {colorArr.length > 0 && <DisplayColours colors={colorArr} />}
         <Footer />
       </div>
-      <DisplayColours colors={colors} />
     </>
   );
 }
