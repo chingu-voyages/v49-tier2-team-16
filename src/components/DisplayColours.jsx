@@ -1,6 +1,7 @@
 import React from 'react'
 
 function DisplayColours({ colors }) {
+
   return (
     <>
     {colors.map(color => (
@@ -17,7 +18,7 @@ function DisplayColours({ colors }) {
     </div>
         ))}
     </>
-    )   
+    )
 }
 
 export default DisplayColours

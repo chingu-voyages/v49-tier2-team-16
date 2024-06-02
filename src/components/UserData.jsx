@@ -7,7 +7,7 @@ function UserData() {
   const [hexColor, setHexColor] = useState('#b19cd9');
   const [rgbColor, setRgbColor] = useState({ r: 177, g: 156, b: 217 });
   const [hslColor, setHslColor] = useState({ h: 261, s: 45, l: 73 });
-  const [userInput, setUserInput] = useState(''); // Add this line
+  const [userInput, setUserInput] = useState(''); // Add this line  
 
   useEffect(() => {
     if (!iroRef.current) {
@@ -75,7 +75,7 @@ function UserData() {
       {/* Add this line */}
       <button onClick={handleSubmit}>Submit Color</button>
     </div>
-  );
+  )
 }
 
 export default UserData;
