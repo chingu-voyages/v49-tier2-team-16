@@ -23,6 +23,10 @@ function App() {
     colorScheme: "complimentary",
   });
 
+  const [colorsArr, setColorsArr] = useState([])
+  setColorsArr(colorSchema)
+  colorsArr.length > 0 && <DisplayColours colors={colorsArr} />
+
   const handleClick = async () => {
     try {
       const chatCompletion = await groq.chat.completions.create({

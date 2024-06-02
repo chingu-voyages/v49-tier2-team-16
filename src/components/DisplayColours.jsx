@@ -1,6 +1,6 @@
 import React from 'react'
 
-function DisplayColours({ colors }) {
+function DisplayColours({ schemeObj }) {
 
   return (
     <>
