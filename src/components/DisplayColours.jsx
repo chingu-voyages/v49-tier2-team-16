@@ -1,7 +1,6 @@
 import React from 'react'
 
-function DisplayColours({ schemeObj }) {
-    const colors =schemeObj ? schemeObj.colors : []
+function DisplayColours({ colors }) {
   return (
     <>
     {colors.map(color => (

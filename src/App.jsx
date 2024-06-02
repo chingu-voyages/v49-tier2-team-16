@@ -23,7 +23,7 @@ function App() {
     colorScheme: "complimentary",
   });
 
-  const [colorArr, setColorsArr] = useState([])
+  const [colorArr, setColorArr] = useState([])
 
   const handleClick = async () => {
     try {
@@ -38,7 +38,7 @@ function App() {
       });
       const chatResponse = chatCompletion.choices[0]?.message?.content || ""; // This is the response from the chat model
       const schemeObj = extractJSON(chatResponse); // This extracts the JSON object from the response
-      console.log(schemeObj);
+      setColorArr(schemeObj);
       // From here I imagine we can pass the schemeObj to a component that will display the colors
       // This click aslo has access to the formData and hexColor so it doesn't make sense to pass into the extractJSON function
       // Just pass it in here. Remember, we may want to generate an image at this point too. We could write a function for this as well.
