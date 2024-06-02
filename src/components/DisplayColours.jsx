@@ -3,6 +3,7 @@ import React from 'react'
 function DisplayColours({ colors }) {
   return (
     <>
+    <h3>Thank you for choosing Color Compass</h3>
     {colors.map(color => (
         <div key={color.hex}>
             <div className={`bg-${color.hex.slice(1)}-300 rounded-full p-6 inline-block`}
