@@ -104,6 +104,7 @@ function App() {
         <Footer />
       </div>
       <DisplayColours colors={colors} />
+        <Footer />
     </>
   )
 }

@@ -1,4 +1,5 @@
 import React from 'react'
+import data from './data/team.json'
 
 function Footer() {
 
@@ -6,6 +7,10 @@ function Footer() {
         <>
         <div>
             <p>Chingu Team 16 of Voyage 49, Tier 2</p>
+            {
+                data.map(dev => <p>{dev.name}</p>
+                )
+            }
         </div>
         </>
     )
