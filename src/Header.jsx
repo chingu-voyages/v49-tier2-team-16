@@ -1,13 +1,14 @@
-import React from "react";
+import React from 'react'
 
 function Header() {
-  return (
-    <>
-      <div className="flex mx-auto items-center">
-        <h1>Color Compass</h1>
-      </div>
-    </>
-  );
+
+    return (
+        <>
+        <div>
+            <h1>Color Compass</h1>
+        </div>
+        </>
+    )
 }
 
-export default Header;
+export default Header

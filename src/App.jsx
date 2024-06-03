@@ -100,7 +100,7 @@ function App() {
         <br />
         <button className="shadow-lg" onClick={handleClick}>
           Get recommendation
-        </button>
+
         <Footer />
       </div>
       <DisplayColours colors={colors} />
