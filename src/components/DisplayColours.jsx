@@ -8,10 +8,10 @@ function DisplayColours({ colors }) {
         <div key={color.hex}>
             <div className={`rounded-full p-6 inline-block`}
             style={{ backgroundColor: color.hex }}></div>
-        <p>Hex: {color.hex}</p>
-        <p>Name: {color.name}</p>
+        <p>{color.hex}</p>
+        <p>{color.name}</p>
     <div>
-        <p>Description: {color.description}</p>
+        <p>{color.description}</p>
     </div>
     </div>
         ))}
