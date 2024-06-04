@@ -11,6 +11,28 @@ function TextSection() {
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Phasellus mattis tortor ut tortor cursus, ac maximus tortor.
                         </p>
+                        <p>Lorem ipsum</p>
+                        <p>Lorem ipsum</p>
+                        <p className="w-2/3 md:w-[460px]">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Phasellus mattis tortor ut tortor cursus, ac maximus tortor.
+                        </p>
+                        <p>Lorem ipsum</p>
+                        <p>Lorem ipsum</p>
+                        <p className="w-2/3 md:w-[460px]">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Phasellus mattis tortor ut tortor cursus, ac maximus tortor.
+                        </p>                        <p>Lorem ipsum</p>
+                        <p>Lorem ipsum</p>
+                        <p className="w-2/3 md:w-[460px]">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Phasellus mattis tortor ut tortor cursus, ac maximus tortor.
+                        </p>                        <p>Lorem ipsum</p>
+                        <p>Lorem ipsum</p>
+                        <p className="w-2/3 md:w-[460px]">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Phasellus mattis tortor ut tortor cursus, ac maximus tortor.
+                        </p>
                     </div>
                 </div>
             </Wrapper>
