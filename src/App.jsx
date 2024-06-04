@@ -1,12 +1,13 @@
 ("use strict");
 import Groq from "groq-sdk";
 import { useState, useMemo, useEffect } from "react";
-import "./App.css";
 import extractJSON from "./utils/extractJson";
 import ColorPicker from "./components/ColorPicker";
 import InputForm from "./components/InputForm";
+import Header from "./components/Header";
+import MainSection from "./components/MainSection";
 import DisplayColours from "./components/DisplayColours"
-import Header from "./Header";
+
 import Footer from "./Footer";
 
 const groq = new Groq({
@@ -68,6 +69,7 @@ function App() {
     <>
       <div style={{ alignItems: "center" }}>
         <Header />
+        <MainSection />
         <ColorPicker options={options} setters={setters} />
         <InputForm
           handleChange={handleChange}
@@ -75,7 +77,7 @@ function App() {
           hexColor={hexColor}
         />
         <br />
-        <button className="shadow-lg" onClick={handleClick}>
+        <button className='shadow-lg' onClick={handleClick}>
           Get recommendation
         </button>
         {colorArr.length > 0 && <DisplayColours colors={colorArr} />}
