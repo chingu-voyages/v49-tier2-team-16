@@ -6,6 +6,8 @@ import ColorPicker from "./components/ColorPicker";
 import InputForm from "./components/InputForm";
 import Header from "./components/Header";
 import MainSection from "./components/MainSection";
+import DisplayColours from "./components/DisplayColours"
+
 import Footer from "./Footer";
 
 const groq = new Groq({
@@ -22,6 +24,8 @@ function App() {
     colorScheme: "complimentary",
   });
 
+  const [colorArr, setColorArr] = useState([])
+
   const handleClick = async () => {
     try {
       const chatCompletion = await groq.chat.completions.create({
@@ -35,7 +39,7 @@ function App() {
       });
       const chatResponse = chatCompletion.choices[0]?.message?.content || ""; // This is the response from the chat model
       const schemeObj = extractJSON(chatResponse); // This extracts the JSON object from the response
-      console.log(schemeObj);
+      setColorArr(schemeObj);
       // From here I imagine we can pass the schemeObj to a component that will display the colors
       // This click aslo has access to the formData and hexColor so it doesn't make sense to pass into the extractJSON function
       // Just pass it in here. Remember, we may want to generate an image at this point too. We could write a function for this as well.
@@ -60,6 +64,7 @@ function App() {
       return { ...currForm, [changedField]: newValue };
     });
   };
+  
   return (
     <>
       <div style={{ alignItems: "center" }}>
@@ -75,6 +80,7 @@ function App() {
         <button className='shadow-lg' onClick={handleClick}>
           Get recommendation
         </button>
+        {colorArr.length > 0 && <DisplayColours colors={colorArr} />}
         <Footer />
       </div>
     </>
