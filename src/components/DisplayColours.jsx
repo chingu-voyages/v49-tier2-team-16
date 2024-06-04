@@ -1,8 +1,10 @@
 import React from 'react'
+import TextSection from './TextSection'
 
 function DisplayColours({ colors }) {
   return (
     <>
+    <TextSection />
     <h3>Thank you for choosing Color Compass</h3>
     {colors.map(color => (
         <div key={color.hex}>
