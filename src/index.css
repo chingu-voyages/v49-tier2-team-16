@@ -2,8 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "IslandMoments";
+  src: url("../src/fonts/IslandMoments-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "OpenSans-Regular";
+  src: url("../src/fonts/OpenSans-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "OpenSans-SemiBold";
+  src: url("../src/fonts/OpenSans-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+
   line-height: 1.5;
   font-weight: 400;
 
@@ -70,3 +95,4 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+*/
