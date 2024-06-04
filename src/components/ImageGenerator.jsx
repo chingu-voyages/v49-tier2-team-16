@@ -1,45 +1,35 @@
 import React, { useEffect, useState } from "react";
 import generateImgURL from "../utils/generateImgURL";
 
-const ImageGenerator = ({prompt}) => {
+const ImageGenerator = ({ prompt, colors }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [imgUrl, setImgUrl] = useState("");
   const [error, setError] = useState("");
-
   useEffect(() => {
-    if (imgUrl) {
-      const img = document.createElement("img");
-      img.src = imgUrl;
-      img.id = "generated-image";
-      const container = document.getElementById("image-container");
-      container.appendChild(img);
-    }
-  }, [imgUrl]);
-
+    const fetchImage = async () => {
+      try {
+        setIsLoading(true);
+        const url = await generateImgURL(prompt, colors);
+        setImgUrl(url);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    fetchImage();
+  }, [prompt, colors]);
   return (
-    <form id="image-container">
-      <input required type="text" id="colors" placeholder="Colors" />
-      <button
-        onClick={async () => {
-          setIsLoading(true);
-          const colors = document.getElementById("colors").value;
-          try {
-            const url = await generateImgURL(prompt, colors);
-            setImgUrl(url);
-          } catch (err) {
-            setError(err.message);
-          } finally {
-            setIsLoading(false);
-          }
-        }}
-        disabled={isLoading}
-      >
-        Generate Image
-      </button>
+    <section>
       {isLoading && <p>Loading...</p>}
+      {!isLoading && imgUrl && (
+        <img
+          src={imgUrl}
+          alt={`Image generated from ${colors} and ${prompt}`}
+        />
+      )}
       {error && <p style={{ color: "red" }}>{error}</p>}
-    </form>
+    </section>
   );
 };
-
 export default ImageGenerator;
