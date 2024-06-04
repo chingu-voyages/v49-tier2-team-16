@@ -1,5 +1,4 @@
 import React from 'react'
-import TextSection from './Text-Section'
 
 function DisplayColours({ colors }) {
   return (
