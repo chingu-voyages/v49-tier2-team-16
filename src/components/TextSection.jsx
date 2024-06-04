@@ -7,31 +7,13 @@ function TextSection() {
             <Wrapper>
                 <div className="relative h-screen flex flex-col md:flex-row justify-center items-center">
                     <div className="md:grow text-sm md:text-base flex flex-col items-center space-y-1 text-center text-primary-dark">
-                        <p className="w-2/3 md:w-[460px]">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Phasellus mattis tortor ut tortor cursus, ac maximus tortor.
-                        </p>
-                        <p>Lorem ipsum</p>
-                        <p>Lorem ipsum</p>
-                        <p className="w-2/3 md:w-[460px]">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Phasellus mattis tortor ut tortor cursus, ac maximus tortor.
-                        </p>
-                        <p>Lorem ipsum</p>
-                        <p>Lorem ipsum</p>
-                        <p className="w-2/3 md:w-[460px]">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Phasellus mattis tortor ut tortor cursus, ac maximus tortor.
-                        </p>                        <p>Lorem ipsum</p>
-                        <p>Lorem ipsum</p>
-                        <p className="w-2/3 md:w-[460px]">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Phasellus mattis tortor ut tortor cursus, ac maximus tortor.
-                        </p>                        <p>Lorem ipsum</p>
-                        <p>Lorem ipsum</p>
-                        <p className="w-2/3 md:w-[460px]">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Phasellus mattis tortor ut tortor cursus, ac maximus tortor.
+                        <h3 className="w-2/3 md:w-[460px]">
+                        Thank you for choosing Color Compass.
+                        </h3>
+                        <p className="flex flex-col items-center text-center">{color.hex}</p>
+                        <p className="flex flex-col items-center text-center">{color.name}</p>
+                        <p className="flex flex-col items-center text-center w-2/3 md:w-[460px]">
+                        {color.description}
                         </p>
                     </div>
                 </div>
