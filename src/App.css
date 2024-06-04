@@ -1,5 +1,5 @@
 #root {
-  max-width: 1280px;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
@@ -10,7 +10,7 @@
   padding: 1.5em;
   will-change: filter;
   transition: filter 300ms;
-  display:inline-block;
+  display: inline-block;
 }
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
@@ -40,4 +40,16 @@
 
 .read-the-docs {
   color: #888;
+}
+
+.main-container {
+  align-items: center;
+  margin-top: 150px;
+  padding-left: 100px;
+  background: linear-gradient(
+    89.89deg,
+    /* #00aca1 0.09%, */ #d797b9 21.28%,
+    #f6e7ef 42.48%,
+    #ffffff 53.08%
+  );
 }

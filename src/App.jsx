@@ -12,7 +12,12 @@ const groq = new Groq({
   dangerouslyAllowBrowser: true, //I'm not sure if this is bad practice
 });
 
-const options = { width: 300 };
+const options = {
+  width: 422,
+  height: 484,
+  borderWidth: 4,
+  borderColor: "#ffffff",
+}; //options for color picker
 
 function App() {
   const [hexColor, setHexColor] = useState("#f00");
@@ -53,9 +58,10 @@ function App() {
       return { ...currForm, [changedField]: newValue };
     });
   };
+
   return (
     <>
-      <div style={{ alignItems: "center" }}>
+      <div className="main-container">
         <Header />
         <ColorPicker options={options} setters={setters} />
         <InputForm
