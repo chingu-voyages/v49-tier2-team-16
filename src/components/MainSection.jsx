@@ -37,7 +37,7 @@ function MainSection() {
         </Wrapper>
       </section>
     </main>
-  );
+  );  
 }
 
 export default MainSection;
