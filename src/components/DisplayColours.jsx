@@ -8,7 +8,7 @@ function DisplayColours({ colors, prompt }) {
       <h2 className="font-caption items-center text-center text-2xl md:text-3xl lg:text-[70px] text-brand-red m-5 p-5">
         Color Compass
       </h2>
-      <div className="flex flex-col md:flex-row w-full">
+      <div className="flex flex-col md:flex-row w-full bg-white">
         <div className="w-full md:w-1/2">
           <h3 className="flex flex-col items-start text-left w-2/3 md:w-[460px]">
             Thank you for choosing Color Compass.
