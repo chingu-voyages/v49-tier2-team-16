@@ -11,7 +11,7 @@ function MainSection() {
           <div className="relative h-screen flex flex-col md:flex-row justify-center items-center">
             <div className="md:grow text-sm md:text-base flex flex-col items-center space-y-1 text-center text-primary-dark">
               <p>Lorem ipsum</p>
-              <h1 className="font-caption items-center text-center text-6xl md:text-8xl lg:text-[110px]text-brand-light-green">
+              <h1 className="font-caption items-center text-center text-6xl md:text-8xl lg:text-[110px] text-brand-light-green">
                 Color Compass
               </h1>
               <p className="w-2/3 md:w-[460px]">
