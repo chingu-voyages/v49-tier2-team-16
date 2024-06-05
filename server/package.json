@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "openai": "^4.47.1"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon --env-file=.env index.js"
+  },
+  "name": "openai-api",
+  "version": "0.0.1",
+  "description": "Just a simple API to enable access to gpt-4o for generating color schemas",
+  "main": "index.js",
+  "keywords": [
+    "api",
+    "express",
+    "backend",
+    "node.js",
+    "chatgpt"
+  ]
+}
