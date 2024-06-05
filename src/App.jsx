@@ -80,7 +80,7 @@ function App() {
         <button className='shadow-lg' onClick={handleClick}>
           Get recommendation
         </button>
-        {colorArr.length > 0 && <DisplayColours colors={colorArr} />}
+        {colorArr.length > 0 && <DisplayColours colors={colorArr} prompt={formData.usage} />}
         <Footer />
       </div>
     </>
