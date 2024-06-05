@@ -5,12 +5,12 @@ export default function InputForm({ handleChange, formData, hexColor }) {
   return (
     <div>
       <form>
-        <div className="scheme-container space-y-2.5 my-3 py-2.5">
+        <div className="scheme-container bg-primary-color space-y-2.5 my-3 py-2.5">
           <div className="flex justify-center mx-2.5 gap-x-0.5 scheme-buttons-container">
             <div>
               <button
                 style={{ width: "130px" }}
-                className="rounded-full border-white scheme-button"
+                className="rounded-full border-white border-2 scheme-button"
               >
                 Analogue
               </button>
@@ -18,7 +18,7 @@ export default function InputForm({ handleChange, formData, hexColor }) {
             <div>
               <button
                 style={{ width: "130px" }}
-                className="rounded-full border-white scheme-button"
+                className="rounded-full border-white border-2 scheme-button"
               >
                 Triadic
               </button>
@@ -26,7 +26,7 @@ export default function InputForm({ handleChange, formData, hexColor }) {
             <div>
               <button
                 style={{ width: "150px" }}
-                className="rounded-full border-white scheme-button"
+                className="rounded-full border-white border-2 scheme-button"
               >
                 Complimentary
               </button>
@@ -69,23 +69,6 @@ export default function InputForm({ handleChange, formData, hexColor }) {
             value={formData.usage}
           />
         </div>
-        <p>using</p>
-        {hexColor}
-        <p>in a</p>
-        <div>
-          <select
-            className="shadow-lg p-3"
-            name="colorScheme"
-            onChange={handleChange}
-            id="colorScheme"
-            value={formData.colorScheme}
-          >
-            <option value="complimentary">complimentary</option>
-            <option value="triadic">triadic</option>
-            <option value="analagous">analagous</option>
-          </select>
-        </div>
-        <p>color scheme!</p>
       </form>
     </div>
   );

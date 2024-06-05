@@ -6,6 +6,8 @@ import ColorPicker from "./components/ColorPicker";
 import InputForm from "./components/InputForm";
 import Header from "./components/Header";
 import MainSection from "./components/MainSection";
+import InputSection from "./components/InputSection";
+
 import Footer from "./Footer";
 
 const groq = new Groq({
@@ -13,12 +15,12 @@ const groq = new Groq({
   dangerouslyAllowBrowser: true, //I'm not sure if this is bad practice
 });
 
-const options = {
-  width: 422,
-  height: 484,
-  borderWidth: 4,
-  borderColor: "#ffffff",
-}; //options for color picker
+// const options = {
+//   width: 422,
+//   height: 484,
+//   borderWidth: 4,
+//   borderColor: "#ffffff",
+// }; //options for color picker
 
 function App() {
   const [hexColor, setHexColor] = useState("#f00");
@@ -71,14 +73,20 @@ function App() {
       <div className="main-container">
         <Header />
         <MainSection />
-        <ColorPicker options={options} setters={setters} />
-        <InputForm
+        <InputSection
+          setters={setters}
           handleChange={handleChange}
           formData={formData}
           hexColor={hexColor}
         />
+        {/* <ColorPicker options={options} setters={setters} />
+        <InputForm
+          handleChange={handleChange}
+          formData={formData}
+          hexColor={hexColor}
+        /> */}
         <br />
-        <button className='shadow-lg' onClick={handleClick}>
+        <button className="shadow-lg" onClick={handleClick}>
           Get recommendation
         </button>
         <Footer />
