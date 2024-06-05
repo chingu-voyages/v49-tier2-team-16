@@ -6,8 +6,7 @@ import ColorPicker from "./components/ColorPicker";
 import InputForm from "./components/InputForm";
 import Header from "./components/Header";
 import MainSection from "./components/MainSection";
-import DisplayColours from "./components/DisplayColours"
-
+import DisplayColours from "./components/DisplayColours";
 import Footer from "./Footer";
 
 const groq = new Groq({
@@ -23,8 +22,10 @@ function App() {
     usage: "Coordinate colors for my outfit",
     colorScheme: "complimentary",
   });
+  const [colorArr, setColorArr] = useState([]);
+  const prompt = useMemo(() => formData.usage, [formData.usage]);
+  const colors = useMemo(() => colorArr, [colorArr]);
 
-  const [colorArr, setColorArr] = useState([])
 
   const handleClick = async () => {
     try {
@@ -48,6 +49,8 @@ function App() {
       console.error(error.message);
     }
   };
+
+
   const setters = useMemo(
     () => ({
       onChangeColor(color) {
@@ -64,7 +67,6 @@ function App() {
       return { ...currForm, [changedField]: newValue };
     });
   };
-  
   return (
     <>
       <div style={{ alignItems: "center" }}>
@@ -77,10 +79,12 @@ function App() {
           hexColor={hexColor}
         />
         <br />
-        <button className='shadow-lg' onClick={handleClick}>
+        <button className="shadow-lg" onClick={handleClick}>
           Get recommendation
         </button>
-        {colorArr.length > 0 && <DisplayColours colors={colorArr} prompt={formData.usage} />}
+        {colorArr.length > 0 && (
+          <DisplayColours colors={colors} prompt={prompt} />
+        )}
         <Footer />
       </div>
     </>
