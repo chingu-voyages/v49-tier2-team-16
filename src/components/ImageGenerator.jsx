@@ -30,6 +30,7 @@ const ImageGenerator = ({ prompt, colors }) => {
           <div className="w-full h-full">
             {colors.map((color) => (
               <div
+                key={color.name}
                 className={`rounded-full p-6 inline-block`}
                 style={{ backgroundColor: color.hex }}
               >{color.hex}</div> 
