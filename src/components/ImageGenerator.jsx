@@ -20,16 +20,25 @@ const ImageGenerator = ({ prompt, colors }) => {
     fetchImage();
   }, [prompt, colors]);
   return (
-    <section>
+    <div className="w-full md:w-1/2">
       {isLoading && <p>Loading...</p>}
       {!isLoading && imgUrl && (
-        <img
-          src={imgUrl}
-          alt={`Image generated from ${colors} and ${prompt}`}
-        />
+        <div
+          className="w-full h-full bg-cover bg-center bg-no-repeat bg-f"
+          style={{ backgroundImage: `url(${imgUrl})` }}
+        >
+          <div>
+            {colors.map((color) => (
+              <div
+                className={`rounded-full p-6 inline-block`}
+                style={{ backgroundColor: color.hex }}
+              >{color.hex}</div> 
+            ))}
+          </div>
+        </div>
       )}
       {error && <p style={{ color: "red" }}>{error}</p>}
-    </section>
+    </div>
   );
 };
 export default ImageGenerator;
