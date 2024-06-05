@@ -9,7 +9,7 @@ function DisplayColours({ colors, prompt }) {
         <Wrapper>
             <div className="relative flex flex-col md:flex-row justify-center items-center">
                 <div className="md:grow text-sm md:text-base flex flex-col items-center space-y-1 text-center text-primary-dark p-0 mt-8 mb-8">
-                    <h2 className="font-caption items-center text-center text-2xl md:text-3xl lg:text-[60px] text-brand-red">Color Compass</h2>
+                    <h2 className="font-caption text-brand-red">Color Compass</h2>
                     <h3 className="flex flex-col items-start text-left w-2/3 md:w-[460px]">
                         Thank you for choosing Color Compass.
                     </h3>
