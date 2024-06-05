@@ -2,10 +2,11 @@ import React from "react";
 import ImageGenerator from "./ImageGenerator";
 
 function DisplayColours({ prompt, colors }) {
-  const justColors = colors.map((color) => color.name);
+  const colorNames = colors.map((color) => color.name);
   return (
     <>
       <h3>Thank you for choosing Color Compass</h3>
+      <p><strong>{prompt}</strong></p>
       {colors.map((color) => (
         <div key={color.hex}>
           <div
@@ -19,7 +20,7 @@ function DisplayColours({ prompt, colors }) {
           </div>
         </div>
       ))}
-      <ImageGenerator prompt={prompt} colors={justColors} />
+      <ImageGenerator prompt={prompt} colors={colorNames} />
     </>
   );
 }
