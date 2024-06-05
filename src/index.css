@@ -24,3 +24,17 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.circle-color-box {
+  height: 8em;
+  width: 8em;
+}
+
+.circle-color-box > .center {
+  position: absolute;
+  top: "50%";
+  left: "50%";
+  transform: "translate(-50%, -50%)";
+}
+
+
