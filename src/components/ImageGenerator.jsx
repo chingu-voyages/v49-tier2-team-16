@@ -25,7 +25,7 @@ const ImageGenerator = ({ prompt, colors }) => {
       {isLoading &&  <div
           className="w-full h-full"
         ><img className="mx-auto" src={loadingGif} alt="loading image..."/>
-        <p className="text-center">Loading an image to visualize this color scheme... Please wait.</p>
+        <p className="text-center">Generating an image to visualize this color scheme... Please wait.</p>
         </div>}
       {!isLoading && imgUrl && (
         <div
