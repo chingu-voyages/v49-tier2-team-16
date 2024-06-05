@@ -10,7 +10,7 @@ function DisplayColours({ colors, prompt }) {
           Color Compass
         </h2>
 
-        <div className="relative flex md:flex-row justify-center items-center">
+        <div className="relative flex md:flex-row justify-center items-center h-full">
           <div className="w-full md:w-1/2 md:grow text-sm md:text-base flex flex-col items-center space-y-1 text-center text-primary-dark p-0 mt-8 mb-8">
             <h3 className="flex flex-col items-start text-left w-2/3 md:w-[460px]">
               Thank you for choosing Color Compass.
