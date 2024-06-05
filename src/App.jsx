@@ -7,9 +7,8 @@ import InputForm from "./components/InputForm";
 import Header from "./components/Header";
 import MainSection from "./components/MainSection";
 import DisplayColours from "./components/DisplayColours"
-
 import Footer from "./Footer";
-import ImageGenerator from "./components/ImageGenerator";
+
 
 const groq = new Groq({
   apiKey: import.meta.env.VITE_GROQ_API_KEY,
@@ -81,8 +80,7 @@ function App() {
         <button className='shadow-lg' onClick={handleClick}>
           Get recommendation
         </button>
-        {colorArr.length > 0 && <DisplayColours colors={colorArr} />}
-        <ImageGenerator prompt={formData.usage}/>
+        {colorArr.length > 0 && <DisplayColours colors={colorArr} prompt={formData.usage}/>}
         <Footer />
       </div>
     </>
