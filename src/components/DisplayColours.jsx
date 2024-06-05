@@ -1,6 +1,6 @@
 import React from "react";
 import ImageGenerator from "./ImageGenerator";
-import TextSection from "./TextSection";
+import TextSection from "./ResultsSection";
 
 function DisplayColours({ colors, prompt }) {
   return (
