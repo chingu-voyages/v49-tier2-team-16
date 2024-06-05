@@ -20,20 +20,25 @@ const ImageGenerator = ({ prompt, colors }) => {
     fetchImage();
   }, [prompt, colors]);
   return (
-    <div className="w-full md:w-1/2 md:h-auto h-full">
+    <div className="w-full h-full">
       {isLoading && <p>Loading...</p>}
       {!isLoading && imgUrl && (
         <div
           className="w-full h-full bg-cover bg-center bg-no-repeat bg-f"
           style={{ backgroundImage: `url(${imgUrl})` }}
         >
-          <div className="w-full h-full">
+          <div className="w-full h-full flex flex-col">
             {colors.map((color) => (
               <div
                 key={color.name}
-                className={`rounded-full p-6 inline-block`}
+                className={`rounded-full p-6 m-6 circle-color-box`}
                 style={{ backgroundColor: color.hex }}
-              >{color.hex}</div> 
+              >
+                <div className="center">
+                  <p>{color.hex}</p>
+                  <p>{color.name}</p>
+                </div>
+              </div>
             ))}
           </div>
         </div>
