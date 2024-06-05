@@ -1,6 +1,5 @@
 import React from "react";
 import ImageGenerator from "./ImageGenerator";
-import Wrapper from "./Wrapper";
 import TextSection from "./TextSection";
 
 function DisplayColours({ colors, prompt }) {
