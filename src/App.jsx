@@ -88,26 +88,14 @@ function App() {
       <div className="main-container">
         <Header />
         <MainSection />
-        <InputSection
-          setters={setters}
-          handleChange={handleChange}
-          handleClick={handleClick}
-          formData={formData}
-          hexColor={hexColor}
-        />
         {!buttonClicked && (
-          <>
-            <ColorPicker options={options} setters={setters} />
-            <InputForm
-              handleChange={handleChange}
-              formData={formDataRef.current}
-              hexColor={hexColor}
-            />
-            <br />
-            <button className="shadow-lg" onClick={handleClick}>
-              Get recommendation
-            </button>
-          </>
+          <InputSection
+            setters={setters}
+            handleChange={handleChange}
+            handleClick={handleClick}
+            formData={formDataRef.current}
+            hexColor={hexColor}
+          />
         )}
         {buttonClicked && <ResultsSection colors={colors} prompt={prompt} />}
         <Footer />
