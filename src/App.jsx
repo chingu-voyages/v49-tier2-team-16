@@ -18,6 +18,7 @@ const options = { width: 300 };
 
 function App() {
   const [hexColor, setHexColor] = useState("#f00");
+  const [trigger, setTrigger] = useState(false);
   const [buttonClicked, setButtonClicked] = useState(false);
   const formDataRef = useRef({
     usage: "Coordinate colors for my outfit",
@@ -26,6 +27,9 @@ function App() {
   const colorArrRef = useRef([]);
   const promptRef = useRef(formDataRef.current.usage);
 
+  useEffect(() => {
+    promptRef.current = formDataRef.current.usage;
+  }, [trigger]);
   useEffect(() => {
     promptRef.current = formDataRef.current.usage;
   }, [formDataRef.current.usage]);
@@ -65,6 +69,7 @@ function App() {
     const changedField = e.target.name;
     const newValue = e.target.value;
     formDataRef.current = { ...formDataRef.current, [changedField]: newValue };
+    setTrigger((prev) => prev + 1);
   };
   return (
     <>
