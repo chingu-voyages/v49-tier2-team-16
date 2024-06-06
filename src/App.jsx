@@ -7,6 +7,7 @@ import InputForm from "./components/InputForm";
 import Header from "./components/Header";
 import MainSection from "./components/MainSection";
 import ResultsSection from "./components/ResultsSection";
+import InputSection from "./components/InputSection";
 import Footer from "./Footer";
 
 const groq = new Groq({
@@ -14,7 +15,12 @@ const groq = new Groq({
   dangerouslyAllowBrowser: true, //I'm not sure if this is bad practice
 });
 
-const options = { width: 300 };
+// const options = {
+//   width: 422,
+//   height: 484,
+//   borderWidth: 4,
+//   borderColor: "#ffffff",
+// }; //options for color picker
 
 function App() {
   const [hexColor, setHexColor] = useState("#f00");
@@ -79,9 +85,16 @@ function App() {
   };
   return (
     <>
-      <div style={{ alignItems: "center" }}>
+      <div className="main-container">
         <Header />
         <MainSection />
+        <InputSection
+          setters={setters}
+          handleChange={handleChange}
+          handleClick={handleClick}
+          formData={formData}
+          hexColor={hexColor}
+        />
         {!buttonClicked && (
           <>
             <ColorPicker options={options} setters={setters} />
