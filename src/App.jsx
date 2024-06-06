@@ -42,7 +42,7 @@ function App() {
         messages: [
           {
             role: "user",
-            content: `Provide a JSON Object that contains a color scheme of four colors generated from the hex code color ${hexColor}. The color scheme should help with ${formDataRef.current.colorScheme}. Provide details about why each color was picked. Ensure each color has a name and hex code and description with at least 10 characters. The color scheme must be used to ${formDataRef.current.usage}. The JSON object is an array of objects that contain the following properties: name, hex, description.`,
+            content: `Provide a JSON Object that contains a color scheme of four colors generated from the hex code color ${hexColor}. The color scheme should help with ${formDataRef.current.colorScheme}. Provide details about why each color was picked. Ensure each color has a name and hex code and description with at least 30 characters. The color scheme must be used in refrence of ${formDataRef.current.usage}. The JSON object is an array of objects that contain the following properties: name, hex, description.`,
           },
         ],
         model: "llama3-8b-8192",
@@ -68,8 +68,13 @@ function App() {
     e.preventDefault?.();
     const changedField = e.target.name;
     const newValue = e.target.value;
-    formDataRef.current = { ...formDataRef.current, [changedField]: newValue };
-    setTrigger((prev) => prev + 1);
+    if (!newValue.includes(".")) {
+      formDataRef.current = {
+        ...formDataRef.current,
+        [changedField]: newValue,
+      };
+      setTrigger((prev) => prev + 1);
+    }
   };
   return (
     <>
