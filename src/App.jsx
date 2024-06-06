@@ -69,7 +69,7 @@ function App() {
     const changedField = e.target.name;
     const newValue = e.target.value;
     const breakingChars = /[^a-zA-Z0-9 ]/g;
-    if (!regex.test(breakingChars)) {
+    if (!breakingChars.test(newValue)) {
       formDataRef.current = {
         ...formDataRef.current,
         [changedField]: newValue,
