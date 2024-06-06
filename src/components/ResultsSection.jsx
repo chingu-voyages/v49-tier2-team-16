@@ -1,6 +1,6 @@
 import React from "react";
 import ImageGenerator from "./ImageGenerator";
-import TextSection from "./ResultsSection";
+import DisplayColours from "./DisplayColours";
 
 function ResultsSection({ colors, prompt }) {
   return (
@@ -17,7 +17,7 @@ function ResultsSection({ colors, prompt }) {
             <strong>{prompt}</strong>
           </p>
           {colors.map((color) => (
-            <TextSection key={color.hex} color={color} />
+            <DisplayColours key={color.hex} color={color} />
           ))}
         </div>
         <div className="w-full md:w-1/2">
