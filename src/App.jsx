@@ -6,7 +6,8 @@ import ColorPicker from "./components/ColorPicker";
 import InputForm from "./components/InputForm";
 import Header from "./components/Header";
 import MainSection from "./components/MainSection";
-import DisplayColours from "./components/DisplayColours"
+import InputSection from "./components/InputSection";
+import DisplayColours from "./components/DisplayColours";
 
 import Footer from "./Footer";
 
@@ -15,7 +16,12 @@ const groq = new Groq({
   dangerouslyAllowBrowser: true, //I'm not sure if this is bad practice
 });
 
-const options = { width: 300 };
+// const options = {
+//   width: 422,
+//   height: 484,
+//   borderWidth: 4,
+//   borderColor: "#ffffff",
+// }; //options for color picker
 
 function App() {
   const [hexColor, setHexColor] = useState("#f00");
@@ -24,7 +30,7 @@ function App() {
     colorScheme: "complimentary",
   });
 
-  const [colorArr, setColorArr] = useState([])
+  const [colorArr, setColorArr] = useState([]);
 
   const handleClick = async () => {
     try {
@@ -64,22 +70,26 @@ function App() {
       return { ...currForm, [changedField]: newValue };
     });
   };
-  
+
   return (
     <>
-      <div style={{ alignItems: "center" }}>
+      <div className="main-container">
         <Header />
         <MainSection />
-        <ColorPicker options={options} setters={setters} />
+        <InputSection
+          setters={setters}
+          handleChange={handleChange}
+          handleClick={handleClick}
+          formData={formData}
+          hexColor={hexColor}
+        />
+        {/* <ColorPicker options={options} setters={setters} />
         <InputForm
           handleChange={handleChange}
           formData={formData}
           hexColor={hexColor}
-        />
-        <br />
-        <button className='shadow-lg' onClick={handleClick}>
-          Get recommendation
-        </button>
+        /> */}
+
         {colorArr.length > 0 && <DisplayColours colors={colorArr} />}
         <Footer />
       </div>
