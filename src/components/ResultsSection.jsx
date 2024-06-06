@@ -8,14 +8,16 @@ function ResultsSection({ colors, prompt }) {
       <h2 className="font-caption items-center text-center text-2xl md:text-3xl lg:text-[70px] text-brand-red m-5 p-5">
         Color Compass
       </h2>
-      <div className="flex flex-col md:flex-row w-full bg-white">
-        <div className="w-full md:w-1/2 mt-20">
-          <h3 className="flex flex-col items-center text-center w-full md:w-[460px] ml-20 pb-4">
-            Thank you for choosing Color Compass.
-          </h3>
-          <p className="flex flex-col items-center text-center w-full md:w-[460px] ml-20 pb-4">
-            <strong>{prompt}</strong>
-          </p>
+      <div className="flex flex-col md:flex-row w-full my-20 ">
+        <div className="w-full md:w-1/2 bg-white my-20 py-20">
+          <div className="flex flex-col items-center">
+            <h3 className="text-center w-full pb-4">
+              Thank you for choosing Color Compass.
+            </h3>
+            <p className="text-center w-full pb-4">
+              <strong>{prompt}</strong>
+            </p>
+          </div>
           {colors.map((color) => (
             <DisplayColours key={color.hex} color={color} />
           ))}
