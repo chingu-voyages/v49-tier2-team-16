@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import generateImgURL from "../utils/generateImgURL";
-import loadingGif from '../img/loading.gif'
+import { setContrastText } from "../utils/setContrastText";
+import loadingGif from "../img/loading.gif";
 
 const ImageGenerator = ({ prompt, colors }) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -22,11 +23,18 @@ const ImageGenerator = ({ prompt, colors }) => {
   }, [prompt, colors]);
   return (
     <div className="w-full h-full">
-      {isLoading &&  <div
-          className="w-full h-full"
-        ><img className="mx-auto rounded" src={loadingGif} alt="loading image..."/>
-        <p className="text-center">Generating an image to visualize this color scheme... Please wait.</p>
-        </div>}
+      {isLoading && (
+        <div className="w-full h-full">
+          <img
+            className="mx-auto rounded"
+            src={loadingGif}
+            alt="loading image..."
+          />
+          <p className="text-center">
+            Generating an image to visualize this color scheme... Please wait.
+          </p>
+        </div>
+      )}
       {!isLoading && imgUrl && (
         <div
           className="w-full h-full bg-cover bg-center bg-no-repeat bg-f ai-image"
@@ -36,8 +44,11 @@ const ImageGenerator = ({ prompt, colors }) => {
             {colors.map((color) => (
               <div
                 key={color.name}
-                className={`rounded-full p-6 m-6 circle-color-box`}
-                style={{ backgroundColor: color.hex }}
+                className={`rounded-full p-6 m-6 circle-color-box font-bold`}
+                style={{
+                  backgroundColor: color.hex,
+                  color: setContrastText(color.hex),
+                }}
               >
                 <div className="text-center">
                   <p>{color.hex}</p>
@@ -48,9 +59,11 @@ const ImageGenerator = ({ prompt, colors }) => {
           </div>
         </div>
       )}
-      {error && <div
-          className="w-full h-full text-center"
-        ><p style={{ color: "red" }}>{error}</p></div>}
+      {error && (
+        <div className="w-full h-full text-center">
+          <p style={{ color: "red" }}>{error}</p>
+        </div>
+      )}
     </div>
   );
 };
