@@ -39,7 +39,7 @@ const ImageGenerator = ({ prompt, colors }) => {
                 className={`rounded-full p-6 m-6 circle-color-box`}
                 style={{ backgroundColor: color.hex }}
               >
-                <div className="center">
+                <div className="text-center">
                   <p>{color.hex}</p>
                   <p>{color.name}</p>
                 </div>
