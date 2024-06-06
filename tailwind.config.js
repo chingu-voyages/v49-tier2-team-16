@@ -26,8 +26,8 @@ export default {
       keyframes: {
         arrowRotate: {
           "0%": { transform: "rotate(0deg)" },
-          "30%": { transform: "rotate(-60deg)" },
-          "60%": { transform: "rotate(40deg)" },
+          "30%": { transform: "rotate(-15deg)" },
+          "60%": { transform: "rotate(50deg)" },
           "100%": { transform: "rotate(0deg)" },
         },
       },
