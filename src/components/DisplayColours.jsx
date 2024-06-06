@@ -10,10 +10,10 @@ function DisplayColours({ colors, prompt }) {
       </h2>
       <div className="flex flex-col md:flex-row w-full bg-white">
         <div className="w-full md:w-1/2 mt-20">
-          <h3 className="flex flex-col items-center text-center w-full md:w-[460px] ml-20">
+          <h3 className="flex flex-col items-center text-center w-full md:w-[460px] ml-20 pb-4">
             Thank you for choosing Color Compass.
           </h3>
-          <p className="flex flex-col items-center text-center w-full md:w-[460px] ml-20">
+          <p className="flex flex-col items-center text-center w-full md:w-[460px] ml-20 pb-4">
             <strong>{prompt}</strong>
           </p>
           {colors.map((color) => (
