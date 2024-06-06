@@ -28,6 +28,7 @@
 .circle-color-box {
   height: 8em;
   width: 8em;
+  font-size: 1rem;
 }
 
 .circle-color-box > .center {
