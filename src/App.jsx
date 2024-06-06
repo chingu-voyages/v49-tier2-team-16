@@ -6,7 +6,7 @@ import ColorPicker from "./components/ColorPicker";
 import InputForm from "./components/InputForm";
 import Header from "./components/Header";
 import MainSection from "./components/MainSection";
-import DisplayColours from "./components/DisplayColours";
+import ResultsSection from "./components/ResultsSection";
 import Footer from "./Footer";
 
 const groq = new Groq({
@@ -83,7 +83,7 @@ function App() {
           Get recommendation
         </button>
         {colorArr.length > 0 && (
-          <DisplayColours colors={colors} prompt={prompt} />
+          <ResultsSection colors={colors} prompt={prompt} />
         )}
         <Footer />
       </div>
