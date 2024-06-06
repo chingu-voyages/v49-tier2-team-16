@@ -5,11 +5,11 @@ import DisplayColours from "./DisplayColours";
 function ResultsSection({ colors, prompt }) {
   return (
     <section className="bg-[url('/src/img/results-section-bg.png')] bg-cover bg-center w-full h-screen border-y border-secondary-color">
-      <h2 className="font-caption items-center text-center text-2xl md:text-3xl lg:text-[70px] text-brand-red m-5 p-5">
-        Color Compass
-      </h2>
       <div className="flex flex-col md:flex-row w-full my-20 ">
         <div className="w-full md:w-1/2 bg-white my-20 py-20">
+          <h2 className="font-caption items-center text-center text-2xl md:text-3xl lg:text-[70px] text-brand-red results-title">
+            Color Compass
+          </h2>
           <div className="flex flex-col items-center">
             <h3 className="text-center w-full pb-4">
               Thank you for choosing Color Compass.

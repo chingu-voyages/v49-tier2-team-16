@@ -25,6 +25,12 @@
   box-sizing: border-box;
 }
 
+.results-title {
+  font-weight: 600;
+  margin-top: -2.3em;
+  margin-bottom: 1.3em;
+}
+
 .circle-color-box {
   height: 8em;
   width: 8em;
@@ -42,4 +48,5 @@
 .ai-image{
   border-radius: 1.5em 0 0 1.5em;
 }
+
 
