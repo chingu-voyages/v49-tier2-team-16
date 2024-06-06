@@ -24,12 +24,12 @@ const ImageGenerator = ({ prompt, colors }) => {
     <div className="w-full h-full">
       {isLoading &&  <div
           className="w-full h-full"
-        ><img className="mx-auto" src={loadingGif} alt="loading image..."/>
+        ><img className="mx-auto rounded" src={loadingGif} alt="loading image..."/>
         <p className="text-center">Generating an image to visualize this color scheme... Please wait.</p>
         </div>}
       {!isLoading && imgUrl && (
         <div
-          className="w-full h-full bg-cover bg-center bg-no-repeat bg-f"
+          className="w-full h-full bg-cover bg-center bg-no-repeat bg-f ai-image"
           style={{ backgroundImage: `url(${imgUrl})` }}
         >
           <div className="w-full h-full flex flex-col">
