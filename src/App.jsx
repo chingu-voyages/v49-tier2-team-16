@@ -79,6 +79,7 @@ function App() {
         <InputSection
           setters={setters}
           handleChange={handleChange}
+          handleClick={handleClick}
           formData={formData}
           hexColor={hexColor}
         />
@@ -88,10 +89,7 @@ function App() {
           formData={formData}
           hexColor={hexColor}
         /> */}
-        <br />
-        <button className="shadow-lg" onClick={handleClick}>
-          Get recommendation
-        </button>
+
         {colorArr.length > 0 && <DisplayColours colors={colorArr} />}
         <Footer />
       </div>

@@ -11,7 +11,13 @@ const options = {
   borderColor: "#ffffff",
 }; //options for color picker
 
-function InputSection({ setters, handleChange, formData, hexColor }) {
+function InputSection({
+  setters,
+  handleChange,
+  formData,
+  hexColor,
+  handleClick,
+}) {
   return (
     <main>
       <section className="bg-[url('/src/img/input-section-bg.png')] bg-cover bg-center w-full h-screen border-y border-secondary-color">
@@ -24,6 +30,9 @@ function InputSection({ setters, handleChange, formData, hexColor }) {
                 formData={formData}
                 hexColor={hexColor}
               />
+              <button className="shadow-lg" onClick={handleClick}>
+                Get recommendation
+              </button>
             </div>
           </div>
         </Wrapper>
