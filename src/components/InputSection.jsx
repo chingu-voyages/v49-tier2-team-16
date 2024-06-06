@@ -1,8 +1,7 @@
-import React from "react";
 import Wrapper from "./Wrapper";
-
 import ColorPicker from "../components/ColorPicker";
 import InputForm from "../components/InputForm";
+import TextArea from "../components/TextArea";
 
 const options = {
   width: 422,
@@ -22,8 +21,8 @@ function InputSection({
     <main>
       <section className="bg-[url('/src/img/input-section-bg.png')] bg-cover bg-center w-full h-screen border-y border-secondary-color">
         <Wrapper>
-          <div className="relative h-screen flex flex-col md:flex-row justify-center items-center">
-            <div className="md:grow text-sm md:text-base flex flex-col items-center space-y-1 text-center text-primary-dark">
+          <div className="md:grow text-sm md:text-base flex flex-row items-center space-y-1 text-center text-primary-dark mt-80">
+            <div className="md:grow text-sm md:text-base flex flex-col items-center space-y-1 text-center text-primary-dark w-1/2">
               <ColorPicker options={options} setters={setters} />
               <InputForm
                 handleChange={handleChange}
@@ -33,6 +32,10 @@ function InputSection({
               <button className="shadow-lg" onClick={handleClick}>
                 Get recommendation
               </button>
+            </div>
+
+            <div className="md:grow text-sm md:text-base flex flex-col items-center space-y-1 text-center text-primary-dark w-1/2 h-full">
+              <TextArea />
             </div>
           </div>
         </Wrapper>
