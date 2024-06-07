@@ -21,12 +21,11 @@ function TextArea() {
       </label>
       <textarea
         id="description"
-        className="w-2/3 px-3 py-10 text-gray-700 border rounded-lg focus:outline-none mx-auto"
-        style={{ backgroundColor: "#f1ebe5" }}
+        className="w-2/3  max-h-48  text-gray-700 border rounded-lg focus:outline-none mx-auto bg-primary-color"
         rows="4"
       />
 
-      <button className="w-2/5 py-3 px-5 bg-white text-green-500 border border-green-500 rounded-full hover:bg-green-500 hover:text-white mx-auto">
+      <button className="w-2/5 py-3 px-5 bg-white text-brand-green border border-green-500 rounded-full hover:bg-brand-green hover:text-white mx-auto">
         Get Recommendations
       </button>
     </div>
