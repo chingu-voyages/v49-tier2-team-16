@@ -1,22 +1,17 @@
-import React from 'react'
-
-function DisplayColours({ colors }) {
+function DisplayColours({ color }) {
   return (
-    <>
-    <h3>Thank you for choosing Color Compass</h3>
-    {colors.map(color => (
-        <div key={color.hex}>
-            <div className={`rounded-full p-6 inline-block`}
-            style={{ backgroundColor: color.hex }}></div>
-        <p>Hex: {color.hex}</p>
-        <p>Name: {color.name}</p>
-    <div>
-        <p>Description: {color.description}</p>
+    <div className="mx-5 px-5 flex">
+      <div className="text-brand-light-green w-1/4 font-bold">
+      <p className="flex flex-col items-start text-left">{color.hex}</p>
+      <p className="flex flex-col items-start text-left pb-4">{color.name}</p>
+      </div>
+      <div className="w-3/4">
+      <p className="flex flex-col pb-4">
+        {color.description}
+      </p>
+      </div>
     </div>
-    </div>
-        ))}
-    </>
-    )
+  );
 }
 
-export default DisplayColours
+export default DisplayColours;
