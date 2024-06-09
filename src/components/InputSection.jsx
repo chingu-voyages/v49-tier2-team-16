@@ -16,6 +16,7 @@ function InputSection({
   formData,
   hexColor,
   handleClick,
+  usageEmpty,
 }) {
   return (
     <main>
@@ -28,6 +29,7 @@ function InputSection({
                 handleChange={handleChange}
                 formData={formData}
                 hexColor={hexColor}
+                usageEmpty={usageEmpty}
               />
               <button className="shadow-lg" onClick={handleClick}>
                 Get recommendation

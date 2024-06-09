@@ -24,6 +24,7 @@ const groq = new Groq({
 
 function App() {
   const [hexColor, setHexColor] = useState("#f00");
+  const [usageEmpty, setUsageEmpty] = useState(false);
   const [trigger, setTrigger] = useState(false);
   const [buttonClicked, setButtonClicked] = useState(false);
   const formDataRef = useRef({
@@ -43,6 +44,11 @@ function App() {
   const prompt = useMemo(() => promptRef.current, [promptRef.current]);
 
   const handleClick = async () => {
+    if (formDataRef.current.usage === "") {
+      // alert("Usage cannot be empty!");
+      setUsageEmpty(true);
+      return;
+    }
     try {
       const chatCompletion = await groq.chat.completions.create({
         messages: [
@@ -81,6 +87,7 @@ function App() {
         [changedField]: newValue,
       };
       setTrigger((prev) => prev + 1);
+      setUsageEmpty(false);
     }
   };
   return (
@@ -95,6 +102,7 @@ function App() {
             handleClick={handleClick}
             formData={formDataRef.current}
             hexColor={hexColor}
+            usageEmpty={usageEmpty}
           />
         )}
         {buttonClicked && <ResultsSection colors={colors} prompt={prompt} />}

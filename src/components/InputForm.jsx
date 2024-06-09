@@ -1,7 +1,12 @@
 import React from "react";
 import "./InputForm.css";
 
-export default function InputForm({ handleChange, formData, hexColor }) {
+export default function InputForm({
+  handleChange,
+  formData,
+  hexColor,
+  usageEmpty,
+}) {
   return (
     <div>
       <form>
@@ -68,6 +73,7 @@ export default function InputForm({ handleChange, formData, hexColor }) {
             id="usage"
             value={formData.usage}
           />
+          {usageEmpty && <p style={{ color: "red" }}>This cannot be empty!</p>}
         </div>
       </form>
     </div>
