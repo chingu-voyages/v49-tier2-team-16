@@ -25,8 +25,7 @@ async function returnNewImage(prompt, colors) {
         n: 1,
         size: "256x256", // restrict image size to 256x256 while developing
       });
-  if ((promptObj.size = "320x240"))
-    return `https://via.placeholder.com/1024&text=ERROR%20Invalid%20image%20dimensions`;
+  if (!promptObj) return `https://via.placeholder.com/1024&text=ERROR`;
   const response = await openai.images.generate(promptObj);
   return response.data[0].url;
 }
