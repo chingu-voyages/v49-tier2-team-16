@@ -1,14 +1,16 @@
 ("use strict");
-import Groq from "groq-sdk";
+import Groq, { NotFoundError } from "groq-sdk";
 import { useState, useMemo, useEffect, useRef } from "react";
+import { Routes, Route, Link } from "react-router-dom";
 import extractJSON from "./utils/extractJson";
 import ColorPicker from "./components/ColorPicker";
 import InputForm from "./components/InputForm";
 import Header from "./components/Header";
 import MainSection from "./components/MainSection";
-import ResultsSection from "./components/ResultsSection";
 import InputSection from "./components/InputSection";
+import ResultsSection from "./components/ResultsSection";
 import Footer from "./Footer";
+import ScrollButton from "./components/ScrollButton";
 
 const groq = new Groq({
   apiKey: import.meta.env.VITE_GROQ_API_KEY,
@@ -85,19 +87,34 @@ function App() {
   };
   return (
     <>
-      <div className="main-container">
+      <div className='main-container translate-x-0'>
         <Header />
-        <MainSection />
-        {!buttonClicked && (
-          <InputSection
-            setters={setters}
-            handleChange={handleChange}
-            handleClick={handleClick}
-            formData={formDataRef.current}
-            hexColor={hexColor}
+        <Routes>
+          <Route path='/' element={<MainSection />} />
+          <Route
+            path='/input'
+            element={
+              !buttonClicked && (
+                <InputSection
+                  setters={setters}
+                  handleChange={handleChange}
+                  handleClick={handleClick}
+                  formData={formDataRef.current}
+                  hexColor={hexColor}
+                />
+              )
+            }
           />
-        )}
-        {buttonClicked && <ResultsSection colors={colors} prompt={prompt} />}
+          <Route
+            path='/result'
+            element={
+              buttonClicked && (
+                <ResultsSection colors={colors} prompt={prompt} />
+              )
+            }
+          />
+        </Routes>
+        <ScrollButton />
         <Footer />
       </div>
     </>
