@@ -26,6 +26,7 @@ function TextArea({ handleChange, formData, handleClick }) {
         rows="4"
         onChange={handleChange}
         value={formData.usage}
+        required
       />
 
       <button
