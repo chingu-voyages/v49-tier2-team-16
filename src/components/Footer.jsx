@@ -18,7 +18,7 @@ function Footer() {
           </a>
         </section>
         <section className="lg:flex">
-          <section className="w-full grid grid-cols-3 gap-4 bg-primary-color">
+          <section className="w-full grid grid-cols-3 gap-4 bg-primary-color p-1.5 lg:px-2.5">
             <div className="">
               <p className="text-brand-red"> Web Developers:</p>
               <FooterVoyager
@@ -73,7 +73,7 @@ function Footer() {
               />
             </div>
           </section>
-          <section className="w-full grid grid-cols-3 gap-4 bg-primary-color">
+          <section className="w-full grid grid-cols-3 gap-4 bg-primary-color  p-1.5 lg:px-2.5">
             <div className="lg:py-3.5">
               <p className="text-brand-red"> UI/UX Designer:</p>
               <FooterVoyager

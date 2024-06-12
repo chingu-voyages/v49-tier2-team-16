@@ -1,6 +1,6 @@
 export default function FooterVoyager({ liUrl, ghUrl, voyager }) {
   return (
-    <div className="flex gap-0.5 items-center text-nowrap">
+    <div className="flex gap-0.5 items-center md:text-nowrap">
       <a href={liUrl}>
         <img
           className="pl-[1px]"
