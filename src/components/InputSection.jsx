@@ -16,10 +16,11 @@ function InputSection({
   formData,
   hexColor,
   handleClick,
+  usageEmpty,
 }) {
   return (
     <main>
-      <section className="bg-[url('/src/img/input-section-bg.png')] bg-cover bg-center w-full h-screen border-y border-secondary-color">
+      <section className="bg-[url('/src/img/input-section-bg.png')] bg-cover bg-center w-full border-y border-secondary-color">
         <Wrapper>
           <div className="md:grow text-sm md:text-base block lg:flex w-full items-center space-y-1 text-center text-primary-dark mt-80">
             <div className="md:grow text-sm md:text-base flex flex-col items-center space-y-1 text-center text-primary-dark lg:w-1/2">
@@ -28,6 +29,7 @@ function InputSection({
                 handleChange={handleChange}
                 formData={formData}
                 hexColor={hexColor}
+                usageEmpty={usageEmpty}
               />
             </div>
 
