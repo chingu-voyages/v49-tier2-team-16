@@ -8,7 +8,7 @@ import Header from "./components/Header";
 import MainSection from "./components/MainSection";
 import ResultsSection from "./components/ResultsSection";
 import InputSection from "./components/InputSection";
-import Footer from "./Footer";
+import Footer from "./components/Footer";
 
 const groq = new Groq({
   apiKey: import.meta.env.VITE_GROQ_API_KEY,
