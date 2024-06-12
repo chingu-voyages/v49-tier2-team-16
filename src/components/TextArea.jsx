@@ -1,4 +1,3 @@
-import ResultsSection from "./ResultsSection";
 import { Link } from "react-router-dom";
 
 function TextArea({ handleClick, handleChange, formData }) {
@@ -19,16 +18,18 @@ function TextArea({ handleClick, handleChange, formData }) {
 
       <label
         className='block text-gray-700 text-base font-bold mb-1 w-2/3 mx-auto pt-5'
-        htmlFor='description'
+        htmlFor='usage'
       >
         Describe where do you plan to use this color?
       </label>
       <textarea
-        id='description'
+        id='usage'
+        name="usage"
         className='w-2/3  max-h-48  text-gray-700 border rounded-lg focus:outline-none mx-auto bg-primary-color'
         rows='4'
         onChange={handleChange}
         value={formData.usage}
+        required
       />
 
       <Link
