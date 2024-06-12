@@ -31,13 +31,14 @@ function InputSection({
                 hexColor={hexColor}
                 usageEmpty={usageEmpty}
               />
-              <button className="shadow-lg" onClick={handleClick}>
-                Get recommendation
-              </button>
             </div>
 
             <div className="md:grow text-sm md:text-base flex flex-col items-center space-y-1 text-center text-primary-dark lg:w-1/2 block w-full h-full">
-              <TextArea />
+              <TextArea
+                handleChange={handleChange}
+                formData={formData}
+                handleClick={handleClick}
+              />
             </div>
           </div>
         </Wrapper>

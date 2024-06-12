@@ -1,4 +1,3 @@
-import React from "react";
 import "./InputForm.css";
 
 export default function InputForm({
@@ -57,23 +56,6 @@ export default function InputForm({
               {hexColor}
             </div>
           </div>
-        </div>
-
-        {/* <label htmlFor="usage">
-          Describe where do you plan to use this color
-        </label> */}
-        <div>
-          <textarea
-            className="rounded-xl shadow-lg p-3"
-            cols="40"
-            rows="1"
-            placeholder="usage"
-            name="usage"
-            onChange={handleChange}
-            id="usage"
-            value={formData.usage}
-          />
-          {usageEmpty && <p style={{ color: "red" }}>This cannot be empty!</p>}
         </div>
       </form>
     </div>
