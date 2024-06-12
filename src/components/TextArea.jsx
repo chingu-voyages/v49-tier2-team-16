@@ -1,7 +1,8 @@
 import ResultsSection from "./ResultsSection";
 import { Link } from "react-router-dom";
 
-function TextArea({ handleClick, handleChange, formData }) {
+function TextArea({ handleClick, handleChange, promptState }) {
+  console.log(promptState)
   return (
     <div className='flex flex-col space-y-2 py-20 bg-white'>
       <h1 className='text-4xl font-bold sticky -mt-32 text-orange-500'>
@@ -28,7 +29,7 @@ function TextArea({ handleClick, handleChange, formData }) {
         className='w-2/3  max-h-48  text-gray-700 border rounded-lg focus:outline-none mx-auto bg-primary-color'
         rows='4'
         onChange={handleChange}
-        value={formData.usage}
+        value={promptState}
       />
 
       <Link

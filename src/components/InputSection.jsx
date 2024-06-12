@@ -13,13 +13,14 @@ const options = {
 }; //options for color picker
 
 function InputSection({setColors, setPrompt}) {
+
   const [hexColor, setHexColor] = useState("#f00");
   const [trigger, setTrigger] = useState(false);
-  const [buttonClicked, setButtonClicked] = useState(false);
   const formDataRef = useRef({
     usage: "Coordinate colors for my outfit",
     colorScheme: "complimentary",
   });
+  const [promptState, setPromptState] = useState(formDataRef.current.usage);
   const colorArrRef = useRef([]);
   const promptRef = useRef(formDataRef.current.usage);
 
@@ -36,9 +37,8 @@ function InputSection({setColors, setPrompt}) {
     try {
       const schemeObj = await askGroq(hexColor, formDataRef);
       colorArrRef.current = schemeObj;
-      setButtonClicked(true);
       setColors(schemeObj);
-      setPrompt(prompt);
+      setPrompt(promptState);
     } catch (error) {
       console.error(error.message);
     }
@@ -63,6 +63,7 @@ function InputSection({setColors, setPrompt}) {
         [changedField]: newValue,
       };
       setTrigger((prev) => prev + 1);
+      setPromptState(newValue); // update the prompt state
     }
   };
   return (
@@ -78,7 +79,7 @@ function InputSection({setColors, setPrompt}) {
             <TextArea
               handleChange={handleChange}
               handleClick={handleClick}
-              formData={formDataRef.current}
+              promptState={promptState}
             />
           </div>
         </div>
