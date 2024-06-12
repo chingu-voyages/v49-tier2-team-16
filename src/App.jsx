@@ -94,15 +94,15 @@ function App() {
           <Route
             path='/input'
             element={
-              !buttonClicked && (
-                <InputSection
-                  setters={setters}
-                  handleChange={handleChange}
-                  handleClick={handleClick}
-                  formData={formDataRef.current}
-                  hexColor={hexColor}
-                />
-              )
+              /*  !buttonClicked && (*/
+              <InputSection
+                setters={setters}
+                handleChange={handleChange}
+                handleClick={handleClick}
+                formData={formDataRef.current}
+                hexColor={hexColor}
+              />
+              /*} )*/
             }
           />
           <Route
