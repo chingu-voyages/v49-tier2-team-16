@@ -25,12 +25,7 @@ function InputSection({
           <div className='md:grow text-sm md:text-base block lg:flex w-full items-center space-y-1 text-center text-primary-dark'>
             <div className='md:grow text-sm md:text-base flex flex-col items-center space-y-1 text-center text-primary-dark lg:w-1/2'>
               <ColorPicker options={options} setters={setters} />
-              <InputForm
-                handleChange={handleChange}
-                formData={formData}
-                hexColor={hexColor}
-                usageEmpty={usageEmpty}
-              />
+              <InputForm hexColor={hexColor} />
             </div>
 
             <div className='md:grow text-sm md:text-base flex flex-col items-center space-y-1 text-center text-primary-dark lg:w-1/2 block w-full h-full'>
@@ -38,6 +33,7 @@ function InputSection({
                 handleChange={handleChange}
                 handleClick={handleClick}
                 formData={formData}
+                usageEmpty={usageEmpty}
               />
             </div>
           </div>

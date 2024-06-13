@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 function TextArea({ handleClick, handleChange, formData }) {
   return (
@@ -24,14 +24,14 @@ function TextArea({ handleClick, handleChange, formData }) {
       </label>
       <textarea
         id='usage'
-        name="usage"
+        name='usage'
         className='w-2/3  max-h-48  text-gray-700 border rounded-lg focus:outline-none mx-auto bg-primary-color'
         rows='4'
         onChange={handleChange}
         value={formData.usage}
         required
       />
-
+      {usageEmpty && <p style={{ color: 'red' }}>Cannot be empty! </p>}
       <Link
         to='/result'
         onClick={handleClick}
