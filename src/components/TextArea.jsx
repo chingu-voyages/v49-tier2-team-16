@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-function TextArea({ handleClick, handleChange, formData }) {
+function TextArea({ handleClick, handleChange, formData, usageEmpty }) {
   return (
     <div className='flex flex-col space-y-2 py-20 bg-white'>
       <h1 className='text-4xl font-bold sticky -mt-32 text-orange-500'>
