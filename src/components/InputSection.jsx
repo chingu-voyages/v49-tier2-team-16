@@ -29,7 +29,6 @@ function InputSection({
                 handleChange={handleChange}
                 formData={formData}
                 hexColor={hexColor}
-                usageEmpty={usageEmpty}
               />
             </div>
 
@@ -38,6 +37,7 @@ function InputSection({
                 handleChange={handleChange}
                 formData={formData}
                 handleClick={handleClick}
+                usageEmpty={usageEmpty}
               />
             </div>
           </div>

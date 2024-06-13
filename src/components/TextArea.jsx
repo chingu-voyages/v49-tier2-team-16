@@ -1,4 +1,4 @@
-function TextArea({ handleChange, formData, handleClick }) {
+function TextArea({ handleChange, formData, handleClick, usageEmpty }) {
   return (
     <div className="flex flex-col space-y-2 py-20 bg-white">
       <h1 className="text-4xl font-bold sticky -mt-32 text-orange-500">
@@ -16,7 +16,8 @@ function TextArea({ handleChange, formData, handleClick }) {
 
       <label
         className="block text-gray-700 text-base font-bold mb-1 w-2/3 mx-auto pt-5"
-        htmlFor="usage">
+        htmlFor="usage"
+      >
         Describe where do you plan to use this color?
       </label>
       <textarea
@@ -28,10 +29,12 @@ function TextArea({ handleChange, formData, handleClick }) {
         value={formData.usage}
         required
       />
+      {usageEmpty && <p style={{ color: "red" }}>Cannot be empty!</p>}
 
       <button
         className="w-2/5 py-3 px-5 bg-white text-brand-green border border-green-500 rounded-full hover:bg-brand-green hover:text-white mx-auto"
-        onClick={handleClick}>
+        onClick={handleClick}
+      >
         Get Recommendations
       </button>
     </div>

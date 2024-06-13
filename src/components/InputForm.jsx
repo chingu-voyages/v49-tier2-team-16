@@ -1,11 +1,6 @@
 import "./InputForm.css";
 
-export default function InputForm({
-  handleChange,
-  formData,
-  hexColor,
-  usageEmpty,
-}) {
+export default function InputForm({ handleChange, formData, hexColor }) {
   return (
     <div>
       <form>
