@@ -23,6 +23,10 @@ export default {
         link: "0 0 10px rgba(230, 111, 116, 0.5)",
       },
 
+      boxShadow: {
+        "scroll-button": "0 0 6px #EBC0C1",
+      },
+
       keyframes: {
         arrowRotate: {
           "0%": { transform: "rotate(0deg)" },
@@ -30,10 +34,15 @@ export default {
           "60%": { transform: "rotate(50deg)" },
           "100%": { transform: "rotate(0deg)" },
         },
+        slideIn: {
+          "0%": { transform: "translateX(50%)", opacity: 0 },
+          "100%": { transform: "translateX(0)", opacity: 1 },
+        },
       },
 
       animation: {
         arrowRotate: "arrowRotate 1.5s ease-in-out 1" /*infinite*/,
+        slideIn: "slideIn 0.5s ease-out",
       },
     },
   },

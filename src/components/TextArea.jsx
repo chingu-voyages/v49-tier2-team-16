@@ -1,4 +1,6 @@
-function TextArea({ handleChange, formData, handleClick, usageEmpty }) {
+import { Link } from "react-router-dom";
+
+function TextArea({ handleClick, handleChange, formData, usageEmpty }) {
   return (
     <div className="flex flex-col space-y-2 py-20 bg-white">
       <h1 className="text-4xl font-bold sticky -mt-32 text-orange-500">
@@ -29,14 +31,14 @@ function TextArea({ handleChange, formData, handleClick, usageEmpty }) {
         value={formData.usage}
         required
       />
-      {usageEmpty && <p style={{ color: "red" }}>Cannot be empty!</p>}
-
-      <button
-        className="w-2/5 py-3 px-5 bg-white text-brand-green border border-green-500 rounded-full hover:bg-brand-green hover:text-white mx-auto"
+      {usageEmpty && <p style={{ color: "red" }}>Cannot be empty! </p>}
+      <Link
+        to="/result"
         onClick={handleClick}
+        className="w-2/5 py-3 px-5 bg-white text-brand-green border border-green-500 rounded-full hover:bg-brand-green hover:text-white mx-auto"
       >
         Get Recommendations
-      </button>
+      </Link>
     </div>
   );
 }

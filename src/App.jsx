@@ -1,35 +1,30 @@
-("use strict");
-import Groq from "groq-sdk";
-import { useState, useMemo, useEffect, useRef } from "react";
-import extractJSON from "./utils/extractJson";
-import ColorPicker from "./components/ColorPicker";
-import InputForm from "./components/InputForm";
-import Header from "./components/Header";
-import MainSection from "./components/MainSection";
-import ResultsSection from "./components/ResultsSection";
-import InputSection from "./components/InputSection";
-import Footer from "./components/Footer";
+('use strict');
+import Groq, { NotFoundError } from 'groq-sdk';
+import { useState, useMemo, useEffect, useRef } from 'react';
+import { Routes, Route, Link } from 'react-router-dom';
+import extractJSON from './utils/extractJson';
+import ColorPicker from './components/ColorPicker';
+import InputForm from './components/InputForm';
+import Header from './components/Header';
+import MainSection from './components/MainSection';
+import InputSection from './components/InputSection';
+import ResultsSection from './components/ResultsSection';
+import Footer from './components/Footer';
+import ScrollButton from './components/ScrollButton';
 
 const groq = new Groq({
   apiKey: import.meta.env.VITE_GROQ_API_KEY,
   dangerouslyAllowBrowser: true, //I'm not sure if this is bad practice
 });
 
-// const options = {
-//   width: 422,
-//   height: 484,
-//   borderWidth: 4,
-//   borderColor: "#ffffff",
-// }; //options for color picker
-
 function App() {
-  const [hexColor, setHexColor] = useState("#f00");
+  const [hexColor, setHexColor] = useState('#f00');
   const [usageEmpty, setUsageEmpty] = useState(false);
   const [trigger, setTrigger] = useState(false);
   const [buttonClicked, setButtonClicked] = useState(false);
   const formDataRef = useRef({
-    usage: "Coordinate colors for my outfit",
-    colorScheme: "complimentary",
+    usage: 'Coordinate colors for my outfit',
+    colorScheme: 'complimentary',
   });
   const colorArrRef = useRef([]);
   const promptRef = useRef(formDataRef.current.usage);
@@ -44,8 +39,7 @@ function App() {
   const prompt = useMemo(() => promptRef.current, [promptRef.current]);
 
   const handleClick = async () => {
-    if (formDataRef.current.usage === "") {
-      // alert("Usage cannot be empty!");
+    if (formDataRef.current.usage === '') {
       setUsageEmpty(true);
       return;
     }
@@ -53,13 +47,13 @@ function App() {
       const chatCompletion = await groq.chat.completions.create({
         messages: [
           {
-            role: "user",
-            content: `Provide a JSON Object that contains a color scheme of four colors generated from the hex code color ${hexColor}. The color scheme should help with ${formDataRef.current.colorScheme}. Provide details about why each color was picked. Ensure each color has a name and hex code and description with at least 30 characters. The color scheme must be used in refrence of ${formDataRef.current.usage}. The JSON object is an array of objects that contain the following properties: name, hex, description.`,
+            role: 'user',
+            content: `Provide a JSON Object that contains a color scheme of four colors generated from the hex code color ${hexColor}. The color scheme should help with ${formDataRef.current.colorScheme}. Provide details about why each color was picked. Ensure each color has a name and hex code and description with at least 30 characters. The color scheme must be used in reference of ${formDataRef.current.usage}. The JSON object is an array of objects that contain the following properties: name, hex, description.`,
           },
         ],
-        model: "llama3-8b-8192",
+        model: 'llama3-8b-8192',
       });
-      const chatResponse = chatCompletion.choices[0]?.message?.content || ""; // This is the response from the chat model
+      const chatResponse = chatCompletion.choices[0]?.message?.content || ''; // This is the response from the chat model
       const schemeObj = extractJSON(chatResponse); // This extracts the JSON object from the response
       colorArrRef.current = schemeObj;
       setButtonClicked(true);
@@ -86,26 +80,39 @@ function App() {
         ...formDataRef.current,
         [changedField]: newValue,
       };
-      setTrigger((prev) => prev + 1);
+      setTrigger((prev) => !prev); // Changed to toggle boolean for simplicity
       setUsageEmpty(false);
     }
   };
   return (
     <>
-      <div className="main-container">
+      <div className='main-container translate-x-0'>
         <Header />
-        <MainSection />
-        {!buttonClicked && (
-          <InputSection
-            setters={setters}
-            handleChange={handleChange}
-            handleClick={handleClick}
-            formData={formDataRef.current}
-            hexColor={hexColor}
-            usageEmpty={usageEmpty}
+        <Routes>
+          <Route path='/' element={<MainSection />} />
+          <Route
+            path='/input'
+            element={
+              <InputSection
+                setters={setters}
+                handleChange={handleChange}
+                handleClick={handleClick}
+                formData={formDataRef.current}
+                hexColor={hexColor}
+                usageEmpty={usageEmpty}
+              />
+            }
           />
-        )}
-        {buttonClicked && <ResultsSection colors={colors} prompt={prompt} />}
+          <Route
+            path='/result'
+            element={
+              buttonClicked && (
+                <ResultsSection colors={colors} prompt={prompt} />
+              )
+            }
+          />
+        </Routes>
+        <ScrollButton />
         <Footer />
       </div>
     </>
