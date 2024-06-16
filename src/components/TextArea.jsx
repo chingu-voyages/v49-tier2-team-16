@@ -25,7 +25,7 @@ function TextArea({ handleClick, handleChange, formData, usageEmpty }) {
       <textarea
         id='usage'
         name='usage'
-        className='w-2/3 max-h-48 px-3 py-2 m-32 resize-none overflow-y-auto border border-primary-white rounded-[20px] shadow-shape focus:outline-none mx-auto bg-primary-color'
+        className='w-2/3 max-h-48 px-3 py-2 resize-none overflow-y-auto border border-primary-white rounded-[20px] shadow-shape focus:outline-none mx-auto bg-primary-color'
         rows='4'
         onChange={handleChange}
         value={formData.usage}
