@@ -13,6 +13,11 @@ export default {
         "brand-light-green": "#01A391",
         "brand-green": "#018475",
       },
+      backgroundImage: {
+        "main-page": 'url("/src/img/main-section-bg.jpg")',
+        "input-page": 'url("/src/img/input-section-bg.png")',
+        "result-page": 'url("/src/img/results-section-bg.png")',
+      },
 
       fontFamily: {
         display: "OpenSans-Regular, Arial, Helvetica, sans-serif",
@@ -24,7 +29,7 @@ export default {
       },
 
       boxShadow: {
-        "scroll-button": "0 0 6px #EBC0C1",
+        shape: "0 0 6px #EBC0C1",
       },
 
       keyframes: {

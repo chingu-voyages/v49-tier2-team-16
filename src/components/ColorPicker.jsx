@@ -7,9 +7,12 @@ export default function ColorPicker({ options, setters }) {
   useEffect(() => {
     if (!iroRef.current) {
       iroRef.current = new iro.ColorPicker(colorPickerRef.current, options);
+    } else {
+      // If iroRef already exists, update it with new options
+      iroRef.current.setOptions(options);
     }
     iroRef.current.on(["color:init", "color:change"], setters.onChangeColor);
-  }, []);
+  }, [options]);
 
   return (
     <>
