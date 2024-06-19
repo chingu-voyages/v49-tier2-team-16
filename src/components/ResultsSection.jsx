@@ -4,7 +4,7 @@ import DisplayColours from "./DisplayColours";
 
 function ResultsSection({ colors, prompt }) {
   return (
-    <section className="animate-sladeIn bg-[url('/src/img/results-section-bg.png')] bg-cover bg-center w-full lg:h-[calc(100vh-60px)] border-y border-secondary-color animate-slideIn">
+    <section className='animate-sladeIn bg-result-page bg-cover bg-center w-full lg:h-[calc(100vh-60px)] border-y border-secondary-color animate-slideIn'>
       <div className='flex flex-col md:flex-row w-full my-20 '>
         <div className='w-full md:w-1/2 bg-white my-20 py-20'>
           <h2 className='font-caption items-center text-center text-2xl md:text-3xl lg:text-[70px] text-brand-red results-title'>
